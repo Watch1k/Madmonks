@@ -50,6 +50,10 @@ $(document).ready(function(){
 		autoScrolling: false,
 		afterLoad: function () {
 			// $('.js-one > div').find('.js-video').get(0).play();
+			$('body').css('font-size', '14px');
+			$('body').attr({
+				style: 'font-size: 20px;'
+			});
 		}
 	});
 
