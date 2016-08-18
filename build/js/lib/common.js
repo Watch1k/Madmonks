@@ -49,7 +49,13 @@ $(document).ready(function(){
 		scrollOverflow: true,
 		autoScrolling: false,
 		afterLoad: function () {
-			// $('.js-one > div').find('.js-video').get(0).play();
+			var jsVideo = $('.js-video');
+
+			if (jsVideo.length) {
+			 jsVideo.get(0).play();
+			}
+
+			//fix IE svg text
 			$('body').css('font-size', '14px');
 			$('body').attr({
 				style: 'font-size: 20px;'
