@@ -49,7 +49,7 @@ $(document).ready(function(){
 		scrollOverflow: true,
 		autoScrolling: false,
 		afterLoad: function () {
-			$('.js-one > div').find('.js-video').get(0).play();
+			// $('.js-one > div').find('.js-video').get(0).play();
 		}
 	});
 
