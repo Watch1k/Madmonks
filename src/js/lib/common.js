@@ -32,12 +32,12 @@ $(document).ready(function(){
 				var delta = e.originalEvent.deltaY;
 
 				if (delta > 3) {
+					$('.js-svg-overlay').addClass('is-active');
 					$('.js-svg-mask').addClass('is-active');
-					$('.js-svg-fill').addClass('is-active');
 				}
 				if (delta < -3) {
+					$('.js-svg-overlay').removeClass('is-active');
 					$('.js-svg-mask').removeClass('is-active');
-					$('.js-svg-fill').removeClass('is-active');
 				}
 
 				return false; // this line is only added so the whole page won't scroll in the demo
@@ -56,9 +56,9 @@ $(document).ready(function(){
 			}
 
 			//fix IE svg text
-			$('body').css('font-size', '14px');
+			$('body').css('font-size', '16px');
 			$('body').attr({
-				style: 'font-size: 20px;'
+				style: 'font-size: 16px;'
 			});
 		}
 	});

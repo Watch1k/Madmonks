@@ -72,6 +72,9 @@ img
 
 .cfx
 	+pie-clearfix
+	
+svg:not(:root)
+	overflow: hidden
 
 // *
 // 	+selection
@@ -112,15 +115,15 @@ img
 	z-index: 1
 	width: 100%
 	height: 100vh
-	&__svg
-		overflow: hidden
+	margin: 0 auto
+	&__mask
 		position: relative
 		z-index: 1
 		width: 100%
 		height: 100%
-	&__symbol
-		font-family: Verdana
+	&__mask-text
 		font-size: 60px
+		font-family: Verdana
 		text-transform: uppercase
 	&__text
 		& + &
@@ -149,9 +152,10 @@ img
 			right: 0
 			bottom: 0
 			pointer-events: none
-			transition: 2s
+			transition: all 0.7s ease-in
 		&.is-active:before
 			background-color: rgba(0,0,0,.6)
+			transition: all 0.7s ease-out
 	&__video
 		position: absolute
 		top: 0
@@ -174,16 +178,18 @@ img
 		height: 100%
 		top: 0
 		left: 0
-		transition: all 3s
+		transition: all 0.7s ease-in
 		&.is-active
-			opacity: 0
+			//opacity: 0
 			transform: scale(3)
+			transition: all 0.7s ease-out
 	&__mask-shape
 		fill: #ffffff
 	&__shape-fill
+		width: 100%
+		height: 100%
 		fill: $orange
-	&__text-transparent
-		fill: transparent
+		transition: all 0.7s
 
 		
 /* ===================================
