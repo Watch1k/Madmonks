@@ -2,6 +2,12 @@
 $default-fonts: Arial, sans-serif
 //=sans
 	font-family: 'Open Sans', $default-fonts
++font('Museo Sans Regular', 'MuseoSansRegular')
++font('Museo Sans Black', 'MuseoSansBlack')
+=museo
+	font-family: 'Museo Sans Regular', $default-fonts
+=museo-b
+	font-family: 'Museo Sans Black', $default-fonts
 
 // colors
 $white: #ffffff
@@ -20,8 +26,10 @@ $grey-text: #434444
 body
 	min-width: 320px
 	font-size: 16px
-	color: #333
-	line-height: 1.42857
+	font-family: 'PT Sans', $default-fonts
+	color: #text-grey
+	font-weight: normal
+	line-height: 1.857143
 
 .wrapper
 	overflow: hidden
@@ -30,9 +38,7 @@ body
 	//padding-bottom: 40px
 
 .container
-	margin: 0 auto
-	padding: 0 10px
-	max-width: 1200px
+	+container
 	//transition: all 0.3s
 
 
@@ -55,7 +61,7 @@ img
 	vertical-align: top
 
 .icon
-	display: inline-block
+	display: inline
 	vertical-align: middle
 
 .text-left
@@ -66,9 +72,6 @@ img
 
 .text-right
 	text-align: right
-
-.is-hidden
-	display: none
 
 .cfx
 	+pie-clearfix
@@ -88,34 +91,281 @@ svg:not(:root)
 	 =================================== */
 .header
 	position: fixed
-	z-index: 10
-	left: 0
+	z-index: 5
 	top: 0
-	.logo
-		float: left
-	.nav
-		float: right
+	left: 0
+	right: 0
+	padding-top: 33px
+	+pie-clearfix
+	&__container
+		position: relative
+	&.is-active
+		.logo
+			&__img
+				.icon
+					color: $orange-dark
+					transform: scale(1,1)
+			&__text
+				transform: scale(0.85,0.85)
+				opacity: 0
+	
+.logo
+	float: left
+	font-size: 0
+	+pre(10px)
+	&__link
+		display: block
+	&__img
+		display: inline-block
+		vertical-align: top
+		.icon
+			font-size: 58px
+			color: #ffffff
+			transform: scale(1.15,1.15)
+			transition: all 0.5s
+	&__text
+		overflow: hidden
+		position: relative
+		display: inline-block
+		margin-top: 16px
+		margin-left: 12px
+		vertical-align: top
+		transition: all 0.5s
+		.icon
+			font-size: 20px
+			transition: all 0.5s
+		
+.navigation
+	position: relative
+	z-index: 11
+	float: right
+	padding-top: 22px
+	font-size: 0
+	height: 100%
+	+museo
+	transform: translateZ(0)
+	&__link
+		display: inline-block
+		font-size: 16px
+		color: $white
+		line-height: 1
+		& + &
+			margin-left: 40px
+		
+.hamburger
+	display: none
+	padding: 10px
+	position: absolute
+	z-index: 10
+	right: 0
+	cursor: pointer
+	transition-property: opacity, -webkit-filter
+	transition-property: opacity, filter
+	transition-property: opacity, filter, -webkit-filter
+	transition-duration: 0.15s
+	transition-timing-function: linear
+	font: inherit
+	color: inherit
+	text-transform: none
+	background-color: transparent
+	border: 0
+	margin: 12px 0 0
+	overflow: visible
+	&:hover
+		opacity: 0.7
+	&__box
+		width: 23px
+		height: 16px
+		display: block
+		position: relative
+	&__inner
+		display: block
+		top: 50%
+		margin-top: -1px
+		width: 23px
+		height: 2px
+		background-color: $orange-dark
+		position: absolute
+		transition-property: -webkit-transform
+		transition-property: transform
+		transition-property: transform, -webkit-transform
+		transition-duration: 0.15s
+		transition-timing-function: ease
+		&::before, &::after
+			width: 23px
+			height: 2px
+			background-color: $orange-dark
+			position: absolute
+			transition-property: -webkit-transform
+			transition-property: transform
+			transition-property: transform, -webkit-transform
+			transition-duration: 0.15s
+			transition-timing-function: ease
+		&::before, &::after
+			content: ""
+			display: block
+		&::before
+			top: -7px
+		&::after
+			bottom: -7px
+	&_spin &__inner
+		transition-duration: 0.3s
+		transition-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19)
+		&::before
+			transition: top 0.1s 0.34s ease-in, opacity 0.1s ease-in
+		&::after
+			transition: bottom 0.1s 0.34s ease-in, -webkit-transform 0.3s cubic-bezier(0.55, 0.055, 0.675, 0.19)
+			transition: bottom 0.1s 0.34s ease-in, transform 0.3s cubic-bezier(0.55, 0.055, 0.675, 0.19)
+			transition: bottom 0.1s 0.34s ease-in, transform 0.3s cubic-bezier(0.55, 0.055, 0.675, 0.19), -webkit-transform 0.3s cubic-bezier(0.55, 0.055, 0.675, 0.19)
+	&.is-active &__inner
+		-webkit-transform: rotate(225deg)
+		transform: rotate(225deg)
+		transition-delay: 0.14s
+		transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1)
+		&::before
+			top: 0
+			opacity: 0
+			transition: top 0.1s ease-out, opacity 0.1s 0.14s ease-out
+		&::after
+			bottom: 0
+			-webkit-transform: rotate(-90deg)
+			transform: rotate(-90deg)
+			transition: bottom 0.1s ease-out, -webkit-transform 0.3s 0.14s cubic-bezier(0.215, 0.61, 0.355, 1)
+			transition: bottom 0.1s ease-out, transform 0.3s 0.14s cubic-bezier(0.215, 0.61, 0.355, 1)
+			transition: bottom 0.1s ease-out, transform 0.3s 0.14s cubic-bezier(0.215, 0.61, 0.355, 1), -webkit-transform 0.3s 0.14s cubic-bezier(0.215, 0.61, 0.355, 1)
+	
 
 /* ===================================
 	 Footer
 	 =================================== */
 .footer
-	margin-top: -40px
-	height: 40px
-
+	position: fixed
+	z-index: 5
+	left: 0
+	right: 0
+	bottom: 0
+	padding-bottom: 31px
+	transform-origin: 75% 25%
+	transition: all 0.5s
+	&.is-hidden
+		visibility: hidden
+		opacity: 0
+		pointer-events: none
+		transform: scale(0.8)
+	&__mouse
+		position: absolute
+		z-index: 1
+		bottom: 35px
+		left: 50%
+		margin-left: -11px
+		width: 22px
+		height: 32px
+		border-radius: 11px
+		border: 2px solid $white
+		transition: all 0.5s
+		&:before
+			content: ''
+			position: absolute
+			z-index: 1
+			top: 3px
+			left: 50%
+			margin-left: -1px
+			width: 2px
+			height: 8px
+			background-color: $white
+			animation: mouse 2s linear infinite
+			transition: all 0.5s
+	&__info
+		float: right
+		font-size: 14px
+		color: $white
+		line-height: 1
+		transition: all 0.5s
+		+pie-clearfix
+	&__email
+		float: left
+	&__phone
+		margin-left: 87px
+		float: left
+		
+@keyframes mouse
+	0%
+		transform: translateY(0)
+	50%
+		transform: translateY(5px)
+	100%
+		transform: translateY(0)
+		
+#fp-nav.left
+	margin-left: calc(50% - 600px)
+	top: auto
+	bottom: 25px
+	+r(1200)
+		margin-left: 0
+	li
+		margin: 5px 0
+		padding: 5px
+		width: 6px
+		height: 6px
+		&:nth-child(1)
+			display: none
+		a
+			display: block
+			&:focus,
+			&:active
+				color: $orange-dark
+			span
+				background-color: $white
+	&.is-active
+		li
+			a
+				span
+					background-color: $orange
+				&.active
+					span
+						margin: -2px 0 0 -6px
+						width: 12px
+						height: 4px
+						border-radius: 2px
+			&:hover
+				a
+					span
+						margin: -4px 0 0 -4px
+						width: 8px
+						height: 8px
+					&.active
+						span
+							margin: -2px 0 0 -6px
+							width: 12px
+							height: 4px
+							border-radius: 2px
+						
+					
 
 /* ===================================
 	 Main
 	 =================================== */
-
-/* Section #1
+.title
+	margin-bottom: 39px
+	+museo-b
+	font-size: 40px
+	color: $white
+	line-height: 1
+	text-transform: uppercase
+	&_black
+		color: $black
+		
+		
+/* Entry Section
 	----------------------------------- */
 .entry
-	position: relative
+	position: fixed
 	z-index: 1
-	width: 50%
-	height: 50vh
-	margin: 0 auto
+	top: 0
+	left: 0
+	right: 0
+	bottom: 0
+	&.is-active
 	&__mask
 		position: relative
 		z-index: 1
@@ -123,10 +373,11 @@ svg:not(:root)
 		height: 100%
 	&__mask-text
 		font-size: 60px
-		font-family: Verdana
 		text-transform: uppercase
 	&__text
+		+museo
 		& + &
+			+museo-b
 			font-weight: bold
 	&__box
 		position: absolute
@@ -146,18 +397,18 @@ svg:not(:root)
 		&:before
 			content: ''
 			position: absolute
-			z-index: 1
+			z-index: 2
 			top: 0
 			left: 0
 			right: 0
 			bottom: 0
 			pointer-events: none
-			transition: all 0.7s ease-in
+			transition: all 0.5s
 		&.is-active:before
 			background-color: rgba(0,0,0,.6)
-			transition: all 0.7s ease-out
 	&__video
 		position: absolute
+		z-index: 1
 		top: 0
 		left: 0
 		right: 0
@@ -169,8 +420,6 @@ svg:not(:root)
 		background-position: center center
 		background-size: contain
 		object-fit: cover
-		&::-webkit-media-controls
-			display: none
 	&__inverted-mask
 		position: absolute
 		z-index: 1
@@ -178,19 +427,174 @@ svg:not(:root)
 		height: 100%
 		top: 0
 		left: 0
-		transition: all 0.7s ease-in
+		cursor: default
+		transition: all 0.5s
 		&.is-active
-			//opacity: 0
-			transform: scale(3)
-			transition: all 0.7s ease-out
+			opacity: 0
+			transform: scale(2)
 	&__mask-shape
 		fill: #ffffff
 	&__shape-fill
 		width: 100%
 		height: 100%
-		fill: $orange
-		transition: all 0.7s
+		fill: $orange-dark
+		transition: all 0.5s
+	&__text-transparent
+		fill: transparent
+		
+/* Section #1
+	----------------------------------- */
+.one
+	position: relative
+	z-index: 2
+	
+.section
+	overflow: hidden
+	padding-top: 120px
+	padding-bottom: 20px
+	background: transparent center center no-repeat
+	background-size: cover
+	transform: translateZ(0)
+	&__container
+		position: relative
+		z-index: 3
+		transform: translateZ(0)
+	&__quote
+		position: absolute
+		top: -63px
+		float: left
+		color: $grey
+		font-style: italic
+		line-height: 1
+		+gutter()
+		+pre(2)
+		&:before
+			content: ''
+			position: absolute
+			z-index: 1
+			top: 50%
+			left: -30px
+			width: 20px
+			height: 1px
+			background-color: $grey
+	&__video
+		position: absolute
+		z-index: 1
+		top: 0
+		left: 0
+		right: 0
+		bottom: 0
+		width: 100%
+		height: 100%
+		background-size: 100% 100%
+		background-color: #ffffff
+		background-position: center center
+		background-size: contain
+		object-fit: cover
+	&__title
+		+gutter
+		+pre(1)
+	&__row
+		+pie-clearfix
+	&__row + &__title
+		margin-top: 69px
+	&:nth-child(1)
+		z-index: -1
+		pointer-events: none
+		
 
+/* Section #2
+	----------------------------------- */
+.task
+	&__mark
+		+pre(1)
+		+span(5)
+		& + &
+			+pre(0)
+			+span(6)
+		
+.mark
+	font-size: 14px
+	color: $white
+	font-weight: 400
+	line-height: 20px
+	&__item
+		+pie-clearfix
+		& + &
+			margin-top: 20px
+		.icon
+			float: left
+			position: relative
+			top: 1px
+			margin-right: 13px
+			font-size: 12px
+			color: $orange
+	&__text
+		overflow: hidden
+		display: block
+		font-size: 14px
+		
+
+/* Section #3
+	----------------------------------- */
+.about
+	&__overlay
+		position: absolute
+		z-index: 2
+		top: 0
+		left: 0
+		right: 0
+		bottom: 0
+		background-color: rgba(255,255,255,.8)
+		transform: translateZ(0)
+	&__text
+		+gutter
+		+pre(1)
+		+span(4.5)
+		& + &
+			+pre(0.5)
+	&__subtitle
+		margin-top: 47px
+		margin-bottom: 27px
+		+gutter()
+		+pre(1)
+		+museo
+		font-size: 20px
+		color: #1f1f1f
+		line-height: 1
+		text-transform: uppercase
+		
+.excel
+	+pie-clearfix
+	&__col
+		+pre(1)
+		+span(3)
+	&__item
+		margin-bottom: 26px
+		+pie-clearfix
+	&__number
+		float: left
+		position: relative
+		top: 3px
+		margin-right: 14px
+		+museo
+		width: 36px
+		height: 36px
+		border-radius: 50%
+		background-color: $orange
+		color: #ffffff
+		font-size: 20px
+		line-height: 36px
+		text-align: center
+	&__text
+		overflow: hidden
+		font-family: 'PT Sans', $default-fonts
+		font-size: 14px
+		color: $dimgrey
+		font-weight: 400
+		line-height: 26px
+		
+		
 		
 /* ===================================
 	 Other Styles

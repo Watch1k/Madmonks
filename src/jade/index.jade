@@ -1,34 +1,139 @@
 extend includes/_layout
 block title
-	title Home DY
+	title Home
 block body
+	include includes/_header-full
+	//begin entry
+	.entry
+		svg.entry__mask
+			// Symbol with text
+			symbol#s-text
+				g.entry__mask-text
+					text.entry__text(text-anchor='middle', x='50%', y='38%')
+						| С нами вы познаете
+					text.entry__text(text-anchor='middle', x='50%', y='50%')
+						| дзен поисковой
+					text.entry__text(text-anchor='middle', x='50%', y='62%')
+						| оптимизации
+			// Mask with text
+			mask#m-text(maskunits='userSpaceOnUse', maskcontentunits='userSpaceOnUse')
+				rect.entry__mask-shape(width='100%', height='100%')
+				use.entry__mask-text(xmlns:xlink='http://www.w3.org/1999/xlink', xlink:href='#s-text')
+			// Mask with text
+			mask#m-text(maskunits='userSpaceOnUse', maskcontentunits='userSpaceOnUse')
+				rect.entry__mask-shape(width='100%', height='100%')
+				use.mask__text(xmlns:xlink='http://www.w3.org/1999/xlink', xlink:href='#s-text')
+		.entry__box
+			// Container for video
+			.entry__text-fill.js-svg-overlay
+				video.entry__video.js-video-1(muted loop poster='img/video_bg.jpg')
+					source(src='img/video/video.mp4' type='video/mp4')
+			// Visible SVG
+			svg.entry__inverted-mask.js-svg-mask
+				rect.entry__shape-fill(width='100%', height='100%', mask='url(#m-text)')
+				use.entry__text-transparent(xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#s-text")
+	//end entry
+
 	//begin one
 	.one.js-one
-		.section.one__slide
-			.entry
-				svg.entry__mask
-					// Mask with text
-					mask#m-text(maskunits='userSpaceOnUse', maskcontentunits='userSpaceOnUse')
-						rect.entry__mask-shape(width='100%', height='100%')
-						g.entry__mask-text
-							text.entry__text(text-anchor='middle', x='50%', y='40%')
-								| С нами вы познаете
-							text.entry__text(text-anchor='middle', x='50%', y='50%')
-								| дзен поисковой
-							text.entry__text(text-anchor='middle', x='50%', y='60%')
-								| оптимизации
-				.entry__box
-					// Container for video
-					.entry__text-fill.js-svg-overlay
-						video.entry__video.js-video(autoplay='autoplay', loop, muted, controls='false')
-							source(src='http://www.w3schools.com/html/mov_bbb.mp4' type='video/mp4')
-					// Visible SVG
-					svg.entry__inverted-mask.js-svg-mask
-						rect.entry__shape-fill(width='100%', height='100%', mask='url(#m-text)')
-		.section.one__slide
-			| lol
-		.section.one__slide
-			| lol
-		.section.one__slide
-			| lol
+		.section
+		//begin task
+		.section.task
+			.section__container.container
+				.section__title.title делаем
+				.section__row
+					ul.task__mark.mark
+						li.mark__item
+							+i('done')
+							span.mark__text Формируем бренд в сети интернет
+						li.mark__item
+							+i('done')
+							span.mark__text Популяризируем товары / работы / услуги
+						li.mark__item
+							+i('done')
+							span.mark__text Вызываем доверие к компании
+						li.mark__item
+							+i('done')
+							span.mark__text Работаем с заинтересованной аудиторией
+					ul.task__mark.mark
+						li.mark__item
+							+i('done')
+							span.mark__text Увеличиваем видимость интернет ресурса (сайта) в поисковых системах
+						li.mark__item
+							+i('done')
+							span.mark__text Увеличиваем количественную массу потенциальных потребителей
+						li.mark__item
+							+i('done')
+							span.mark__text Стабильность и длительный эффект
+				.section__title.title знаем
+				.section__row
+					ul.task__mark.mark
+						li.mark__item
+							+i('done')
+							span.mark__text Поисковые системы, их требования и рекомендации
+						li.mark__item
+							+i('done')
+							span.mark__text Как сделать идеальную структуру сайта
+						li.mark__item
+							+i('done')
+							span.mark__text Как сделать сайт удобным
+					ul.task__mark.mark
+						li.mark__item
+							+i('done')
+							span.mark__text Требования, предъявляемые к контенту
+						li.mark__item
+							+i('done')
+							span.mark__text Какие недостатки и ошибки исправить на сайте
+						li.mark__item
+							+i('done')
+							span.mark__text Как составить актуальный список ключевых слов
+		//end task
+
+		//begin about
+		.section.about
+			.about__overlay
+			video.section__video.js-video-2(muted loop poster='img/video_bg.jpg')
+				source(src='img/video/video_2.mp4' type='video/mp4')
+			.section__container.container
+				.section__quote Мы не покупаем ссылки. Мы работаем с брендом
+				.section__title.title.title_black о нас
+				.section__row
+					p.about__text Мы не разрабатываем сайты, мы не даем контекст, мы не занимаемся ничем,
+						span.about__text-orange кроме аналитики и улучшения сайтов клиентов под требования поисковых систем.
+					p.about__text Мы не засоряем свой разум лишним мусором, но помогаем с ним разобраться. Проще говоря - у нас SEO головного мозга.
+				.about__subtitle Чем мы выделяемся:
+				.section__row
+					//begin excel
+					.excel
+						.excel__col
+							.excel__item
+								.excel__number 1
+								.excel__text INHOUSE подход к клиенту. Хотя мы и независимые консультанты, но мы ближе, чем вы думаете.
+							.excel__item
+								.excel__number 2
+								.excel__text Глубокое вовлечение в бизнес клиента, его тематику.
+						.excel__col
+							.excel__item
+								.excel__number 3
+								.excel__text Громадный опыт работы с коммерческими проектами любого уровня и тематики.
+							.excel__item
+								.excel__number 4
+								.excel__text Всегда открыты для обсуждения и консультирования по проекту.
+						.excel__col
+							.excel__item
+								.excel__number 5
+								.excel__text Мы не потоковая компания.
+					//end excel
+		//end about
+		.section
+			.section__container.container
+			h1 LOREM LOREM LOREM
+		.section
+			.section__container.container
+			h1 LOREM LOREM LOREM
+		.section
+			.section__container.container
+			h1 LOREM LOREM LOREM
 	//end one
+
+	include includes/_footer-full

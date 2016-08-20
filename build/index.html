@@ -3,34 +3,151 @@
 
 <head>
   <meta charset="utf-8">
-  <title>Home DY</title>
+  <title>Home</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="format-detection" content="telephone=no">
   <!-- theme color for android 5.0 -->
   <meta name="theme-color" content="#fff">
   <!-- <meta name="viewport" content="width=1200"> -->
   <!-- <meta name="viewport" content="initial-scale=1, user-scalable=no"> -->
+  <link href="https://fonts.googleapis.com/css?family=PT+Sans:400,400i,700,700i&amp;subset=cyrillic" rel="stylesheet">
   <link rel="stylesheet" media="all" href="css/screen.css">
   <!--[if IE]><script src="js/html5shiv.js"></script><![endif]-->
 </head>
 
 <body>
-  <!--begin one-->
-  <div class="one js-one">
-    <div class="section one__slide">
-      <div class="entry"><svg class="entry__mask"><!-- Mask with text--><mask id="m-text" maskunits="userSpaceOnUse" maskcontentunits="userSpaceOnUse"><rect width="100%" height="100%" class="entry__mask-shape"></rect><g class="entry__mask-text"><text text-anchor="middle" x="50%" y="40%" class="entry__text">С нами вы познаете</text><text text-anchor="middle" x="50%" y="50%" class="entry__text">дзен поисковой</text><text text-anchor="middle" x="50%" y="60%" class="entry__text">оптимизации</text></g></mask></svg>
-        <div
-          class="entry__box">
-          <!-- Container for video-->
-          <div class="entry__text-fill js-svg-overlay"><video autoplay="autoplay" loop muted controls="false" class="entry__video js-video"><source src="http://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4"></video></div>
-          <!-- Visible SVG--><svg class="entry__inverted-mask js-svg-mask"><rect width="100%" height="100%" mask="url(#m-text)" class="entry__shape-fill"></rect></svg></div>
+  <div class="header js-header">
+    <div class="header__container container">
+      <!-- begin logo-->
+      <div class="logo">
+        <a href="index.html" class="logo__link">
+          <div class="logo__img"><svg class="icon icon-logo"><use xlink:href="img/sprite.svg#icon-logo"></use></svg></div>
+          <div class="logo__text"><svg class="icon icon-logo-text"><use xlink:href="img/sprite.svg#icon-logo-text"></use></svg></div>
+        </a>
+      </div>
+      <!-- end logo-->
+      <!--begin hamburger-->
+      <div class="hamburger hamburger_spin js-hamburger">
+        <div class="hamburger__box">
+          <div class="hamburger__inner"></div>
+        </div>
+      </div>
+      <!--end hamburger-->
+      <!--begin nav-->
+      <nav class="navigation js-navigation"><a href="#" class="navigation__link">Мы</a><a href="#" class="navigation__link">Продвижение сайтов</a><a href="#" class="navigation__link">Отраслевые решения</a><a href="#" class="navigation__link">Другие услуги</a><a href="#" class="navigation__link">Портфолио</a>
+        <a
+          href="#" class="navigation__link">Контакты</a>
+      </nav>
+      <!--end nav-->
     </div>
   </div>
-  <div class="section one__slide">lol</div>
-  <div class="section one__slide">lol</div>
-  <div class="section one__slide">lol</div>
+  <!--begin entry-->
+  <div class="entry"><svg class="entry__mask"><!-- Symbol with text--><symbol id="s-text"><g class="entry__mask-text"><text text-anchor="middle" x="50%" y="38%" class="entry__text">С нами вы познаете</text><text text-anchor="middle" x="50%" y="50%" class="entry__text">дзен поисковой</text><text text-anchor="middle" x="50%" y="62%" class="entry__text">оптимизации</text></g></symbol><!-- Mask with text--><mask id="m-text" maskunits="userSpaceOnUse" maskcontentunits="userSpaceOnUse"><rect width="100%" height="100%" class="entry__mask-shape"></rect><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#s-text" class="entry__mask-text"></use></mask><!-- Mask with text--><mask id="m-text" maskunits="userSpaceOnUse" maskcontentunits="userSpaceOnUse"><rect width="100%" height="100%" class="entry__mask-shape"></rect><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#s-text" class="mask__text"></use></mask></svg>
+    <div
+      class="entry__box">
+      <!-- Container for video-->
+      <div class="entry__text-fill js-svg-overlay"><video muted loop poster="img/video_bg.jpg" class="entry__video js-video-1"><source src="img/video/video.mp4" type="video/mp4"></video></div>
+      <!-- Visible SVG--><svg class="entry__inverted-mask js-svg-mask"><rect width="100%" height="100%" mask="url(#m-text)" class="entry__shape-fill"></rect><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#s-text" class="entry__text-transparent"></use></svg></div>
+  </div>
+  <!--end entry-->
+  <!--begin one-->
+  <div class="one js-one">
+    <div class="section"></div>
+    <!--begin task-->
+    <div class="section task">
+      <div class="section__container container">
+        <div class="section__title title">делаем</div>
+        <div class="section__row">
+          <ul class="task__mark mark">
+            <li class="mark__item"><svg class="icon icon-done"><use xlink:href="img/sprite.svg#icon-done"></use></svg><span class="mark__text">Формируем бренд в сети интернет</span></li>
+            <li class="mark__item"><svg class="icon icon-done"><use xlink:href="img/sprite.svg#icon-done"></use></svg><span class="mark__text">Популяризируем товары / работы / услуги</span></li>
+            <li class="mark__item"><svg class="icon icon-done"><use xlink:href="img/sprite.svg#icon-done"></use></svg><span class="mark__text">Вызываем доверие к компании</span></li>
+            <li class="mark__item"><svg class="icon icon-done"><use xlink:href="img/sprite.svg#icon-done"></use></svg><span class="mark__text">Работаем с заинтересованной аудиторией</span></li>
+          </ul>
+          <ul class="task__mark mark">
+            <li class="mark__item"><svg class="icon icon-done"><use xlink:href="img/sprite.svg#icon-done"></use></svg><span class="mark__text">Увеличиваем видимость интернет ресурса (сайта) в поисковых системах</span></li>
+            <li class="mark__item"><svg class="icon icon-done"><use xlink:href="img/sprite.svg#icon-done"></use></svg><span class="mark__text">Увеличиваем количественную массу потенциальных потребителей</span></li>
+            <li class="mark__item"><svg class="icon icon-done"><use xlink:href="img/sprite.svg#icon-done"></use></svg><span class="mark__text">Стабильность и длительный эффект</span></li>
+          </ul>
+        </div>
+        <div class="section__title title">знаем</div>
+        <div class="section__row">
+          <ul class="task__mark mark">
+            <li class="mark__item"><svg class="icon icon-done"><use xlink:href="img/sprite.svg#icon-done"></use></svg><span class="mark__text">Поисковые системы, их требования и рекомендации</span></li>
+            <li class="mark__item"><svg class="icon icon-done"><use xlink:href="img/sprite.svg#icon-done"></use></svg><span class="mark__text">Как сделать идеальную структуру сайта</span></li>
+            <li class="mark__item"><svg class="icon icon-done"><use xlink:href="img/sprite.svg#icon-done"></use></svg><span class="mark__text">Как сделать сайт удобным</span></li>
+          </ul>
+          <ul class="task__mark mark">
+            <li class="mark__item"><svg class="icon icon-done"><use xlink:href="img/sprite.svg#icon-done"></use></svg><span class="mark__text">Требования, предъявляемые к контенту</span></li>
+            <li class="mark__item"><svg class="icon icon-done"><use xlink:href="img/sprite.svg#icon-done"></use></svg><span class="mark__text">Какие недостатки и ошибки исправить на сайте</span></li>
+            <li class="mark__item"><svg class="icon icon-done"><use xlink:href="img/sprite.svg#icon-done"></use></svg><span class="mark__text">Как составить актуальный список ключевых слов</span></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <!--end task-->
+    <!--begin about-->
+    <div class="section about">
+      <div class="about__overlay"></div><video muted loop poster="img/video_bg.jpg" class="section__video js-video-2"><source src="img/video/video_2.mp4" type="video/mp4"></video>
+      <div class="section__container container">
+        <div class="section__quote">Мы не покупаем ссылки. Мы работаем с брендом</div>
+        <div class="section__title title title_black">о нас</div>
+        <div class="section__row">
+          <p class="about__text">Мы не разрабатываем сайты, мы не даем контекст, мы не занимаемся ничем,<span class="about__text-orange">кроме аналитики и улучшения сайтов клиентов под требования поисковых систем.</span></p>
+          <p class="about__text">Мы не засоряем свой разум лишним мусором, но помогаем с ним разобраться. Проще говоря - у нас SEO головного мозга.</p>
+        </div>
+        <div class="about__subtitle">Чем мы выделяемся:</div>
+        <div class="section__row">
+          <!--begin excel-->
+          <div class="excel">
+            <div class="excel__col">
+              <div class="excel__item">
+                <div class="excel__number">1</div>
+                <div class="excel__text">INHOUSE подход к клиенту. Хотя мы и независимые консультанты, но мы ближе, чем вы думаете.</div>
+              </div>
+              <div class="excel__item">
+                <div class="excel__number">2</div>
+                <div class="excel__text">Глубокое вовлечение в бизнес клиента, его тематику.</div>
+              </div>
+            </div>
+            <div class="excel__col">
+              <div class="excel__item">
+                <div class="excel__number">3</div>
+                <div class="excel__text">Громадный опыт работы с коммерческими проектами любого уровня и тематики.</div>
+              </div>
+              <div class="excel__item">
+                <div class="excel__number">4</div>
+                <div class="excel__text">Всегда открыты для обсуждения и консультирования по проекту.</div>
+              </div>
+            </div>
+            <div class="excel__col">
+              <div class="excel__item">
+                <div class="excel__number">5</div>
+                <div class="excel__text">Мы не потоковая компания.</div>
+              </div>
+            </div>
+          </div>
+          <!--end excel-->
+        </div>
+      </div>
+    </div>
+    <!--end about-->
+    <div class="section">
+      <div class="section__container container"></div>
+      <h1>LOREM LOREM LOREM</h1></div>
+    <div class="section">
+      <div class="section__container container"></div>
+      <h1>LOREM LOREM LOREM</h1></div>
+    <div class="section">
+      <div class="section__container container"></div>
+      <h1>LOREM LOREM LOREM</h1></div>
   </div>
   <!--end one-->
+  <div class="footer js-footer">
+    <div class="container"><button class="footer__mouse js-next-slide"></button>
+      <div class="footer__info"><a href="mailto:manager@madmonks.ru" class="footer__email">manager@madmonks.ru</a><a href="tel:+79091222545" class="footer__phone">+7 909 122-25-45</a></div>
+    </div>
+  </div>
   <script src="js/app.js"></script>
 </body>
 

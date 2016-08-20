@@ -13,14 +13,15 @@ html
     <!-- <meta name="viewport" content="width=1200"> -->
     <!-- <meta name="viewport" content="initial-scale=1, user-scalable=no"> -->
     block css
+      link(href="https://fonts.googleapis.com/css?family=PT+Sans:400,400i,700,700i&subset=cyrillic" rel="stylesheet")
       link(rel="stylesheet" media="all" href="css/screen.css")
     <!--[if IE]><script src="js/html5shiv.js"></script><![endif]-->
   body
     block body
       .wrapper
-        include _header
+        //include _header
         main.main
           block content
-      include _footer
+      //include _footer
     block js
       script(src="js/app.js")
