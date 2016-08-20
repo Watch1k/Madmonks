@@ -19,7 +19,7 @@ $(document).ready(function () {
   $('.one').fullpage({
     navigation: true,
     navigationPosition: 'left',
-    verticalCentered: false,
+    scrollOverflow: true,
     afterLoad: function (anchorLink, index) {
       //fix IE svg text
       $('body').css('font-size', '16px');
@@ -32,13 +32,13 @@ $(document).ready(function () {
     },
     onLeave: function (index, nextIndex, direction) {
       var header = $('.js-header'),
-          svgMask = $('.js-svg-mask'),
-          svgOverlay = $('.js-svg-overlay'),
-          navigation = $('.js-navigation'),
-          nav = $('#fp-nav'),
-          footer = $('.js-footer'),
-          quote = $('.js-quote'),
-          hamburgerBtn = $('.js-hamburger');
+        svgMask = $('.js-svg-mask'),
+        svgOverlay = $('.js-svg-overlay'),
+        navigation = $('.js-navigation'),
+        nav = $('#fp-nav'),
+        footer = $('.js-footer'),
+        quote = $('.js-quote'),
+        hamburgerBtn = $('.js-hamburger');
 
       quote.each(function () {
         if ($(this).data('quote') == nextIndex) {
@@ -54,7 +54,7 @@ $(document).ready(function () {
         header.addClass('is-active');
         svgOverlay.addClass('is-active');
         hamburgerBtn.fadeIn();
-        navigation.fadeOut();
+        navigation.hide();
         nav.addClass('is-active');
         footer.addClass('is-hidden');
       }
@@ -63,7 +63,7 @@ $(document).ready(function () {
         header.removeClass('is-active');
         svgOverlay.removeClass('is-active');
         hamburgerBtn.fadeOut();
-        navigation.fadeIn();
+        navigation.show();
         nav.removeClass('is-active');
         footer.removeClass('is-hidden');
       }
@@ -105,7 +105,7 @@ $(document).ready(function () {
 
   (function () {
     var scrollBtn = $('.js-next-slide'),
-        hamburgerBtn = $('.js-hamburger');
+      hamburgerBtn = $('.js-hamburger');
 
     scrollBtn.on('click', function () {
       $.fn.fullpage.moveTo(2);
@@ -116,8 +116,26 @@ $(document).ready(function () {
     })
   })();
 
-  // $.fn.fullpage.setAutoScrolling(true);
+  (function () {
+    $('.js-bg-list li').hover(function () {
+      if (!$(this).hasClass('is-active')) {
+        $('.js-bg-list li').removeClass('is-active');
+        var index = $(this).index();
+        $(this).css('z-index', '2').addClass('is-active').find('.js-for-hidden').show();
+        $('.js-bg').fadeOut(function () {
+          $(this).css('z-index', '0');
+        });
+        $('.js-bg').eq(index).css('z-index', '1').fadeIn();
+      }
+    }, function () {
+      $(this).removeClass('is-active').css('z-index', '1');
+      $('.js-for-hidden').hide();
+    });
+  })();
 
-  // new WOW().init();
+// $.fn.fullpage.setAutoScrolling(true);
 
-});
+// new WOW().init();
+
+})
+;

@@ -90,6 +90,7 @@ svg:not(:root)
 	 Header
 	 =================================== */
 .header
+	pointer-events: none
 	position: fixed
 	z-index: 5
 	top: 0
@@ -106,10 +107,10 @@ svg:not(:root)
 					color: $orange-dark
 					transform: scale(1,1)
 			&__text
-				transform: scale(0.85,0.85)
-				opacity: 0
+				display: none
 	
 .logo
+	pointer-events: auto
 	float: left
 	font-size: 0
 	+pre(10px)
@@ -130,12 +131,12 @@ svg:not(:root)
 		margin-top: 16px
 		margin-left: 12px
 		vertical-align: top
-		transition: all 0.5s
 		.icon
 			font-size: 20px
 			transition: all 0.5s
 		
 .navigation
+	pointer-events: auto
 	position: relative
 	z-index: 11
 	float: right
@@ -144,15 +145,31 @@ svg:not(:root)
 	height: 100%
 	+museo
 	transform: translateZ(0)
+	+gutter
 	&__link
+		position: relative
 		display: inline-block
 		font-size: 16px
 		color: $white
 		line-height: 1
 		& + &
 			margin-left: 40px
+		&:before
+			content: ''
+			position: absolute
+			bottom: -5px
+			left: 0
+			width: 0
+			height: 2px
+			background-color: #ffffff
+			transition: all 0.3s
+		&:hover
+			&:before
+				width: 100%
+		
 		
 .hamburger
+	pointer-events: auto
 	display: none
 	padding: 10px
 	position: absolute
@@ -245,7 +262,6 @@ svg:not(:root)
 	right: 0
 	bottom: 0
 	padding-bottom: 31px
-	transform-origin: 75% 25%
 	transition: all 0.5s
 	&.is-hidden
 		visibility: hidden
@@ -262,7 +278,6 @@ svg:not(:root)
 		height: 32px
 		border-radius: 11px
 		border: 2px solid $white
-		transition: all 0.5s
 		&:before
 			content: ''
 			position: absolute
@@ -299,6 +314,7 @@ svg:not(:root)
 #fp-nav.left
 	margin-left: calc(50% - 600px)
 	top: auto
+	left: 28px!important
 	bottom: 25px
 	+r(1200)
 		margin-left: 0
@@ -355,6 +371,33 @@ svg:not(:root)
 	&_black
 		color: $black
 		
+.btn
+	overflow: hidden
+	position: relative
+	display: inline-block
+	padding: 18px 40px 14px
+	+museo
+	font-size: 14px
+	color: $white
+	line-height: 1
+	text-transform: uppercase
+	border: 2px solid $orange
+	border-radius: 25px
+	&:after
+		content: ''
+		position: absolute
+		z-index: -1
+		left: 0
+		top: 0
+		bottom: 0
+		width: 0
+		border-radius: 20px
+		background-color: $orange
+		transition: all 0.3s
+	&:hover
+		&:after
+			width: 105%
+		
 		
 /* Entry Section
 	----------------------------------- */
@@ -374,6 +417,9 @@ svg:not(:root)
 	&__mask-text
 		font-size: 60px
 		text-transform: uppercase
+		+r(480)
+			transform: scale(0.3)
+			transform-origin: 50% 50%
 	&__text
 		+museo
 		& + &
@@ -450,24 +496,28 @@ svg:not(:root)
 	
 .section
 	overflow: hidden
-	padding-top: 120px
-	padding-bottom: 20px
 	background: transparent center center no-repeat
 	background-size: cover
 	transform: translateZ(0)
+	&_empty
+		height: 100vh
 	&__container
+		padding-top: 120px
+		padding-bottom: 120px
 		position: relative
 		z-index: 3
 		transform: translateZ(0)
 	&__quote
 		position: absolute
-		top: -63px
+		top: 63px
 		float: left
 		color: $grey
 		font-style: italic
 		line-height: 1
 		+gutter()
 		+pre(2)
+		&_white
+			color: $white
 		&:before
 			content: ''
 			position: absolute
@@ -551,6 +601,11 @@ svg:not(:root)
 		+gutter
 		+pre(1)
 		+span(4.5)
+		font-size: 14px
+		color: $dimgrey
+		line-height: 26px
+		&-orange
+			color: $orange
 		& + &
 			+pre(0.5)
 	&__subtitle
@@ -594,8 +649,268 @@ svg:not(:root)
 		font-weight: 400
 		line-height: 26px
 		
+/* Section #4
+	----------------------------------- */
+.service
+	transform: translateZ(0)
+	&__overlay
+		position: absolute
+		z-index: 2
+		top: 0
+		left: 0
+		right: 0
+		bottom: 0
+		background-color: rgba(0,0,0,.8)
+		transform: translateZ(0)
+	&__col
+		+gutter
+		+pre(1)
+		+span(5)
+		& + &
+			+pre(0)
+	&__text
+		margin-bottom: 39px
+		font-size: 14px
+		color: $grey-light
+		line-height: 26px
+	&__btn
+		position: relative
+		left: gutter()
+		+pre(1)
 		
+
+/* Section #5
+	----------------------------------- */
+.whom
+	position: relative
+	background: transparent url('../img/bg/bg_7.jpg') center center no-repeat
+	background-size: cover
+	transform: translateZ(0)
+	&:before
+		content: ''
+		position: absolute
+		z-index: 0
+		top: 0
+		left: 0
+		right: 0
+		bottom: 0
+		background-color: rgba(255,255,255,.8)
+	&__container
+		padding-top: 100px
+		padding-bottom: 200px
+	&__quote
+		top: 50px
+	&__bg
+		display: none
+		position: absolute
+		left: 0
+		top: 0
+		right: 0
+		bottom: 0
+		background-position: center center
+		background-size: cover
+		background-color: #ffffff
+		z-index: 0
+		pointer-events: none
+		transform: translateZ(0)
+		&_1
+			background-image: url('../img/bg/bg_1.jpg')
+		&_2
+			background-image: url('../img/bg/bg_2.jpg')
+		&_3
+			background-image: url('../img/bg/bg_3.jpg')
+		&_4
+			background-image: url('../img/bg/bg_4.jpg')
+		&_5
+			background-image: url('../img/bg/bg_5.jpg')
+		&_6
+			background-image: url('../img/bg/bg_6.jpg')
+		&:before
+			content: ''
+			position: absolute
+			top: 0
+			left: 0
+			right: 0
+			bottom: 0
+			z-index: 0
+			pointer-events: none
+			background-color: rgba(255,255,255,.8)
+
+.for
+	font-size: 0
+	&__item
+		cursor: pointer
+		position: relative
+		z-index: 1
+		+pre(0.7)
+		+span(3.2)
+		padding: 30px
+		float: none
+		display: inline-block
+		vertical-align: top
+		transition: transform 0.3s
+		&:hover
+			background-color: #ffffff
+			transform: translateY(-20px)
+	&__img
+		position: relative
+		margin-bottom: 18px
+		font-size: 0
+		width: 87px
+		height: 87px
+		border-radius: 50%
+		border: 3px solid $orange
+		text-align: center
+		transition: all 0.3s
+		+vertical
+		.icon
+			font-size: 45px
+			color: $orange
+			vertical-align: middle
+			transition: all 0.3s
+	&__item:hover &__img
+		background-color: $orange
+		.icon
+			color: $white
+	&__title
+		+museo
+		color: $grey-text
+		font-size: 16px
+		line-height: 24px
+	&__hidden
+		position: absolute
+		padding: 0 30px 30px
+		left: 0
+		right: 0
+		top: 100%
+		overflow: hidden
+		display: none
+		background-color: #ffffff
+		transform: translateZ(0)
+	&__desc
+		font-family: 'PT Sans', $default-fonts
+		font-size: 14px
+		color: #6b6b6b
+		font-weight: 400
+		line-height: 26px
+	&__btn
+		position: relative
+		font-family: 'PT Sans', $default-fonts
+		display: inline-block
+		font-size: 14px
+		line-height: 26px
+		color: $orange
+		text-decoration: underline
+		&:before
+			content: '→'
+			position: absolute
+			top: 0
+			right: -20px
+			transition: all 0.2s
+		&:hover
+			text-decoration: underline
+			&:before
+				right: -25px
 		
+.inform
+	position: relative
+	z-index: 2
+	background: #fff url('../img/inform_bg.jpg') center center no-repeat
+	background-size: cover
+	transform: translateZ(0)
+	&:before
+		content: ''
+		position: absolute
+		top: 0
+		left: 0
+		right: 0
+		bottom: 0
+		background-color: rgba(0,0,0,.9)
+		z-index: 0
+	&__container
+		padding-top: 150px
+		padding-bottom: 50px
+	&__quote
+		top: 50px
+		
+.cards
+	transform: translateZ(0)
+	+gutter
+	+pre(1)
+	+pie-clearfix
+	&__item
+		overflow: hidden
+		position: relative
+		height: 202px
+		transform: translateZ(0)
+		transition: all 0.3s
+		&:before
+			content: ''
+			position: absolute
+			top: 0
+			left: 0
+			right: 0
+			bottom: 0
+			background-position: center center
+			background-size: cover
+			background-repeat: no-repeat
+			opacity: 0.5
+			filter: grayscale(33%)
+			transform: translateZ(0)
+			transition: all 0.3s
+		&:hover
+			&:before
+				opacity: 1
+				filter: grayscale(0)
+				transform: scale(1.1)
+		&:nth-child(1)
+			+span(5.5 no-gutters)
+			&:before
+				background-image: url('../img/preview/1.jpg')
+		&:nth-child(2)
+			+span(5.5 no-gutters)
+			&:before
+				background-image: url('../img/preview/2.jpg')
+		&:nth-child(3)
+			+span(5.5 no-gutters)
+			&:before
+				background-image: url('../img/preview/3.jpg')
+		&:nth-child(4)
+			+span(5.5 no-gutters)
+			&:before
+				background-image: url('../img/preview/4.jpg')
+		&:nth-child(5)
+			+span(3.66666 no-gutters)
+			&:before
+				background-image: url('../img/preview/5.jpg')
+		&:nth-child(6)
+			+span(3.66666 no-gutters)
+			&:before
+				background-image: url('../img/preview/6.jpg')
+		&:nth-child(7)
+			+span(3.66666 no-gutters)
+			&:before
+				background-image: url('../img/preview/7.jpg')
+	&__text
+		position: absolute
+		z-index: 3
+		top: auto
+		max-width: 70%
+		left: 15px
+		bottom: 15px
+		padding: 7px 10px
+		+museo-b
+		font-size: 18px
+		color: $white
+		line-height: 24px
+		text-transform: uppercase
+		text-align: left
+		transform: translateZ(0)
+		transition: all 0.3s
+	&__item:hover &__text
+		background-color: rgba(0,0,0,.25)
+		
+
 /* ===================================
 	 Other Styles
 	 =================================== */
