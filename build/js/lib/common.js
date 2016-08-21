@@ -126,20 +126,22 @@ $(document).ready(function () {
   })();
 
   (function () {
-    $('.js-bg-list li').hover(function () {
-      if (!$(this).hasClass('is-active')) {
-        $('.js-bg-list li').removeClass('is-active');
-        var index = $(this).index();
-        $(this).css('z-index', '2').addClass('is-active').find('.js-for-hidden').show();
-        $('.js-bg').fadeOut(function () {
-          $(this).css('z-index', '0');
-        });
-        $('.js-bg').eq(index).css('z-index', '1').fadeIn();
-      }
-    }, function () {
-      $(this).removeClass('is-active').css('z-index', '1');
-      $('.js-for-hidden').hide();
-    });
+    if ($(window).width() > 1024) {
+      $('.js-bg-list li').hover(function () {
+        if (!$(this).hasClass('is-active')) {
+          $('.js-bg-list li').removeClass('is-active');
+          var index = $(this).index();
+          $(this).css('z-index', '2').addClass('is-active').find('.js-for-hidden').show();
+          $('.js-bg').fadeOut(function () {
+            $(this).css('z-index', '0');
+          });
+          $('.js-bg').eq(index).css('z-index', '1').fadeIn();
+        }
+      }, function () {
+        $(this).removeClass('is-active').css('z-index', '1');
+        $('.js-for-hidden').hide();
+      });
+    }
   })();
 
 // new WOW().init();
