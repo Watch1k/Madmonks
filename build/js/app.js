@@ -180,6 +180,11 @@ $(document).ready(function () {
       sliderInfo.text(i + ' из ' + slick.slideCount);
     });
 
+    slider.on('beforeChange', function(event, slick, currentSlide, nextSlide){
+      $('.js-bg').eq(currentSlide).css('z-index', '0').fadeOut();
+      $('.js-bg').eq(nextSlide).css('z-index', '1').fadeIn();
+    });
+
     slider.slick({
       slidesToShow: 1,
       slidesToScroll: 1,

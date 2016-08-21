@@ -935,6 +935,10 @@ video
 		z-index: 0
 		pointer-events: none
 		transform: translateZ(0)
+		+r(1024)
+			&:first-child
+				display: block
+				z-index: 1
 		&_1
 			background-image: url('../img/bg/bg_1.jpg')
 		&_2
@@ -1091,6 +1095,13 @@ video
 	background: #fff url('../img/inform_bg.jpg') center center no-repeat
 	background-size: cover
 	transform: translateZ(0)
+	+r(1024)
+		padding-top: 40px
+	+r(767)
+		padding-top: 0
+	&__quote
+		+r(1024)
+			top: -7px
 	&:before
 		content: ''
 		position: absolute
