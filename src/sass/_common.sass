@@ -550,7 +550,7 @@ video
 	background-size: cover
 	+r(1024)
 		position: relative
-		height: 100vh
+		height: 100%
 		bottom: auto
 	&.is-active
 	&__mask
@@ -889,7 +889,7 @@ video
 			& + &
 				+pre(0)
 	&__text
-		margin-bottom: 39px
+		margin-bottom: 26px
 		font-size: 14px
 		color: $grey-light
 		line-height: 26px
@@ -899,8 +899,7 @@ video
 		position: relative
 		left: gutter()
 		+pre(1)
-		+r(767)
-			margin-top: 12px
+		margin-top: 7px
 		
 
 /* Section #5
@@ -970,9 +969,14 @@ video
 		display: inline-block
 		vertical-align: top
 		transition: transform 0.3s
+		+r(1024)
+			+pre(0)
+			width: auto
 		&:hover
 			background-color: #ffffff
 			transform: translateY(-20px)
+			+r(1024)
+				transform: translateY(0)
 	&__img
 		position: relative
 		margin-bottom: 18px

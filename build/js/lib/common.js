@@ -24,6 +24,16 @@ $(document).ready(function () {
   if ($(window).width() <= 1024) {
     $('.js-svg-size').attr('y', '42%');
     $('.js-svg-size-2').attr('y', '58%');
+
+    var slider = $('.js-bg-list');
+
+    slider.slick({
+      slidesToShow: 1,
+      slidesToScroll: 1,
+      arrows: true,
+      dots: false
+    });
+
   } else {
     $('.one').fullpage({
       navigation: true,
