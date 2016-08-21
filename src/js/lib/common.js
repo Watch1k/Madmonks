@@ -22,7 +22,6 @@ $(document).ready(function () {
     // scrollOverflow: true,
     normalScrollElements: '.navigation',
     afterLoad: function (anchorLink, index) {
-      console.log('loaded');
       //fix IE svg text
       $('body').css('font-size', '16px');
       $('body').attr({
@@ -36,6 +35,7 @@ $(document).ready(function () {
       }
     },
     afterRender: function () {
+      console.log('loaded');
       $('.js-video-1').get(0).play();
     },
     onLeave: function (index, nextIndex, direction) {
