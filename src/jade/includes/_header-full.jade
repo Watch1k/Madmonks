@@ -1,5 +1,11 @@
 .header.js-header
 	.header__container.container
+		//begin hamburger
+		.hamburger.hamburger_spin.js-hamburger
+			.hamburger__box
+				.hamburger__inner
+		//end hamburger
+
 		// begin logo
 		.logo
 			a.logo__link(href="index.html")
@@ -8,12 +14,6 @@
 				.logo__text
 					+i('logo-text')
 		// end logo
-
-		//begin hamburger
-		.hamburger.hamburger_spin.js-hamburger
-			.hamburger__box
-				.hamburger__inner
-		//end hamburger
 
 		//begin nav
 		nav.navigation.js-navigation
@@ -25,3 +25,7 @@
 			a.navigation__link(href='#') Портфолио
 			a.navigation__link(href='#') Контакты
 		//end nav
+
+		a.header__phone(href="tel:+79091222545")
+			+i('phone')
+			span.header__phone-text +7 909 122-25-45

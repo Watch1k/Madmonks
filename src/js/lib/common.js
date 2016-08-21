@@ -29,7 +29,7 @@ $(document).ready(function () {
       navigation: true,
       navigationPosition: 'left',
       scrollOverflow: true,
-      normalScrollElements: '.navigation',
+      normalScrollElements: '.js-navigation',
       afterRender: function () {
         $('.js-video-1').get(0).play();
       },
@@ -101,7 +101,10 @@ $(document).ready(function () {
     var scrollBtn = $('.js-next-slide'),
         hamburgerBtn = $('.js-hamburger'),
         navigation = $('.js-navigation'),
-        closeBtn = $('.js-nav-close');
+        closeBtn = $('.js-nav-close'),
+        mobile = false;
+
+    if ($(window).width() <= 1024) mobile = true;
 
     scrollBtn.on('click', function () {
       $.fn.fullpage.moveTo(2);
@@ -109,11 +112,15 @@ $(document).ready(function () {
 
     hamburgerBtn.on('click', function () {
       $(this).toggleClass('is-active');
-      navigation.fadeIn().addClass('is-active');
+      if (!mobile) {
+        navigation.fadeToggle().toggleClass('is-active');
+      }
     });
 
     closeBtn.on('click', function () {
-      navigation.fadeOut().removeClass('is-active');
+      if (!mobile) {
+        navigation.fadeOut().removeClass('is-active');
+      }
       hamburgerBtn.removeClass('is-active')
     });
   })();

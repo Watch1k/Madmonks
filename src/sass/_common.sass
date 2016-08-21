@@ -98,6 +98,11 @@ svg:not(:root)
 	right: 0
 	padding-top: 33px
 	+pie-clearfix
+	+r(1024)
+		pointer-events: all
+		padding-top: 8px
+		padding-bottom: 8px
+		background-color: #ff7b38
 	&__container
 		position: relative
 	&.is-active
@@ -108,12 +113,34 @@ svg:not(:root)
 					transform: scale(1,1)
 			&__text
 				display: none
+	&__phone
+		display: none
+		font-size: 0
+		&-text
+			+museo
+			font-size: 16px
+			color: #ffffff
+			line-height: 1
+			vertical-align: middle
+		.icon
+			margin-right: 10px
+			font-size: 21px
+			color: #ffb238
+			vertical-align: middle
+		+r(1024)
+			display: block
+			float: right
+			margin-top: 8px
+			margin-right: 13px
+			
 	
 .logo
 	pointer-events: auto
 	float: left
 	font-size: 0
 	+pre(10px)
+	+r(1024)
+		+pre(33px)
 	&__link
 		display: block
 	&__img
@@ -124,6 +151,9 @@ svg:not(:root)
 			color: #ffffff
 			transform: scale(1.15,1.15)
 			transition: all 0.5s
+			+r(1024)
+				font-size: 36px
+				transform: scale(1,1)
 	&__text
 		overflow: hidden
 		position: relative
@@ -131,6 +161,8 @@ svg:not(:root)
 		margin-top: 16px
 		margin-left: 12px
 		vertical-align: top
+		+r(1024)
+			display: none
 		.icon
 			font-size: 20px
 			transition: all 0.5s
@@ -146,6 +178,8 @@ svg:not(:root)
 	+museo
 	transform: translateZ(0)
 	+gutter
+	+r(1024)
+		display: none
 	&__close
 		display: none
 		position: absolute
@@ -258,6 +292,13 @@ svg:not(:root)
 	border: 0
 	margin: 12px 0 0
 	overflow: visible
+	+r(1024)
+		display: block
+		float: left
+		position: relative
+		right: auto
+		margin-top: 1px
+		+pre(13px)
 	&:hover
 		opacity: 0.7
 	&__box
@@ -278,6 +319,8 @@ svg:not(:root)
 		transition-property: transform, -webkit-transform
 		transition-duration: 0.15s
 		transition-timing-function: ease
+		+r(1024)
+			background-color: #ffffff
 		&::before, &::after
 			width: 23px
 			height: 2px
@@ -288,6 +331,8 @@ svg:not(:root)
 			transition-property: transform, -webkit-transform
 			transition-duration: 0.15s
 			transition-timing-function: ease
+			+r(1024)
+				background-color: #ffffff
 		&::before, &::after
 			content: ""
 			display: block
@@ -333,6 +378,8 @@ svg:not(:root)
 	bottom: 0
 	padding-bottom: 31px
 	transition: all 0.5s
+	+r(1024)
+		z-index: 1
 	&.is-hidden
 		visibility: hidden
 		opacity: 0
@@ -456,6 +503,9 @@ video
 	color: $white
 	line-height: 1
 	text-transform: uppercase
+	+r(767)
+		margin-bottom: 29px
+		font-size: 30px
 	&_black
 		color: $black
 		
@@ -498,9 +548,6 @@ video
 	bottom: 0
 	background: #fff url('../img/video_bg.jpg') center center no-repeat
 	background-size: cover
-	+r(1024)
-		position: relative
-		height: 100vh
 	&.is-active
 	&__mask
 		position: relative
@@ -585,12 +632,17 @@ video
 .one
 	position: relative
 	z-index: 2
+	+r(1024)
+		margin-top: 100vh
 	
 .section
 	overflow: hidden
 	background: transparent center center no-repeat
 	background-size: cover
 	transform: translateZ(0)
+	+r(1024)
+		padding-left: 3px
+		padding-right: 3px
 	&_empty
 		height: 100vh
 		+r(1024)
@@ -601,15 +653,25 @@ video
 		position: relative
 		z-index: 3
 		transform: translateZ(0)
+		+r(1024)
+			padding-top: 40px
+			padding-bottom: 40px
 	&__quote
 		position: absolute
+		left: span(2)
 		top: 63px
-		float: left
 		color: $grey
 		font-style: italic
 		line-height: 1
 		+gutter()
-		+pre(2)
+		+r(1024)
+			top: 50px
+			left: auto
+			right: 3px
+			text-align: right
+			max-width: 60%
+			+r(767)
+				display: none
 		&_white
 			color: $white
 		&:before
@@ -638,10 +700,14 @@ video
 	&__title
 		+gutter
 		+pre(1)
+		+r(767)
+			+pre(0)
 	&__row
 		+pie-clearfix
 	&__row + &__title
 		margin-top: 69px
+		+r(767)
+			margin-top: 40px
 	&:nth-child(1)
 		z-index: -1
 		pointer-events: none
@@ -650,12 +716,31 @@ video
 /* Section #2
 	----------------------------------- */
 .task
+	+r(1024)
+		background: #fff url('../img/video_bg.jpg') center center no-repeat
+		background-size: cover
+		&:before
+			pointer-events: none
+			content: ''
+			position: absolute
+			z-index: 0
+			left: 0
+			top: 0
+			right: 0
+			bottom: 0
+			background-color: rgba(41, 36, 36, .6)
 	&__mark
 		+pre(1)
 		+span(5)
+		+r(767)
+			+pre(0)
+			+span(full)
 		& + &
 			+pre(0)
 			+span(6)
+			+r(767)
+				margin-top: 20px
+				+span(full)
 		
 .mark
 	font-size: 14px
@@ -682,6 +767,10 @@ video
 /* Section #3
 	----------------------------------- */
 .about
+	background: #fff url('../img/about_bg.jpg') center center no-repeat
+	background-size: cover
+	+r(1024)
+		background-position: center bottom
 	&__overlay
 		position: absolute
 		z-index: 2
@@ -689,7 +778,7 @@ video
 		left: 0
 		right: 0
 		bottom: 0
-		background-color: rgba(255,255,255,.8)
+		background-color: rgba(244, 244, 243, .8)
 		transform: translateZ(0)
 	&__text
 		+gutter
@@ -698,10 +787,16 @@ video
 		font-size: 14px
 		color: $dimgrey
 		line-height: 26px
+		+r(767)
+			+pre(0)
+			+span(full)
 		&-orange
 			color: $orange
 		& + &
 			+pre(0.5)
+			+r(767)
+				margin-top: 14px
+				+pre(0)
 	&__subtitle
 		margin-top: 47px
 		margin-bottom: 27px
@@ -712,15 +807,31 @@ video
 		color: #1f1f1f
 		line-height: 1
 		text-transform: uppercase
+		+r(767)
+			margin-top: 36px
+			+pre(0)
 		
 .excel
 	+pie-clearfix
 	&__col
 		+pre(1)
 		+span(3)
+		+r(1024)
+			+span(4.5)
+			+r(767)
+				+pre(0)
+				+span(full)
+			&:nth-child(even)
+				+pre(0.5)
+				+r(767)
+					+pre(0)
+			&:last-child
+				+span(full)
 	&__item
 		margin-bottom: 26px
 		+pie-clearfix
+	&__col:last-child &__item:last-child
+		margin-bottom: 0
 	&__number
 		float: left
 		position: relative
@@ -742,6 +853,8 @@ video
 		color: $dimgrey
 		font-weight: 400
 		line-height: 26px
+	&__col:last-child &__text
+		padding-top: 8px
 		
 /* Section #4
 	----------------------------------- */
@@ -756,7 +869,7 @@ video
 		left: 0
 		right: 0
 		bottom: 0
-		background-color: rgba(0,0,0,.8)
+		background-color: rgba(52, 52, 52, .8)
 		transform: translateZ(0)
 	&__col
 		+gutter
@@ -764,11 +877,22 @@ video
 		+span(5)
 		& + &
 			+pre(0)
+		+r(1024)
+			+span(10)
+			& + &
+				+pre(1)
+		+r(767)
+			+pre(0)
+			+span(full)
+			& + &
+				+pre(0)
 	&__text
 		margin-bottom: 39px
 		font-size: 14px
 		color: $grey-light
 		line-height: 26px
+		+r(767)
+			margin-bottom: 26px
 	&__btn
 		position: relative
 		left: gutter()
@@ -790,12 +914,10 @@ video
 		left: 0
 		right: 0
 		bottom: 0
-		background-color: rgba(255,255,255,.8)
+		background-color: rgba(205, 205, 205, .8)
 	&__container
 		padding-top: 100px
 		padding-bottom: 200px
-	&__quote
-		top: 50px
 	&__bg
 		display: none
 		position: absolute
@@ -921,25 +1043,30 @@ video
 		left: 0
 		right: 0
 		bottom: 0
-		background-color: rgba(0,0,0,.9)
+		background-color: rgba(53, 53, 53, .9)
 		z-index: 0
 	&__container
 		padding-top: 150px
 		padding-bottom: 50px
-	&__quote
-		top: 50px
-		
+
+/* Section #6
+	----------------------------------- */
 .cards
 	transform: translateZ(0)
 	+gutter
 	+pre(1)
 	+pie-clearfix
+	+r(767)
+		+pre(0)
 	&__item
 		overflow: hidden
 		position: relative
 		height: 202px
 		transform: translateZ(0)
 		transition: all 0.3s
+		& + &
+			+r(767)
+				margin-top: 20px
 		&:before
 			content: ''
 			position: absolute
@@ -950,43 +1077,68 @@ video
 			background-position: center center
 			background-size: cover
 			background-repeat: no-repeat
-			opacity: 0.5
-			filter: grayscale(33%)
+			filter: grayscale(50%)
+			transform: translateZ(0)
+			transition: all 0.3s
+		&:after
+			pointer-events: none
+			content: ''
+			position: absolute
+			top: 0
+			left: 0
+			right: 0
+			bottom: 0
+			background-color: rgba(53, 53, 53, .5)
 			transform: translateZ(0)
 			transition: all 0.3s
 		&:hover
 			&:before
-				opacity: 1
 				filter: grayscale(0)
 				transform: scale(1.1)
+			&:after
+				background-color: rgba(69, 69, 69, 0)
 		&:nth-child(1)
 			+span(5.5 no-gutters)
 			&:before
 				background-image: url('../img/preview/1.jpg')
+			+r(767)
+				+span(full)
 		&:nth-child(2)
 			+span(5.5 no-gutters)
 			&:before
 				background-image: url('../img/preview/2.jpg')
+			+r(767)
+				+span(full)
 		&:nth-child(3)
 			+span(5.5 no-gutters)
 			&:before
 				background-image: url('../img/preview/3.jpg')
+			+r(767)
+				+span(full)
 		&:nth-child(4)
 			+span(5.5 no-gutters)
 			&:before
 				background-image: url('../img/preview/4.jpg')
+			+r(767)
+				+span(full)
 		&:nth-child(5)
 			+span(3.66666 no-gutters)
 			&:before
 				background-image: url('../img/preview/5.jpg')
+			+r(767)
+				+span(full)
 		&:nth-child(6)
 			+span(3.66666 no-gutters)
 			&:before
 				background-image: url('../img/preview/6.jpg')
+			+r(767)
+				+span(full)
 		&:nth-child(7)
 			+span(3.66666 no-gutters)
 			&:before
 				background-image: url('../img/preview/7.jpg')
+			+r(767)
+				+span(full)
 	&__text
 		position: absolute
 		z-index: 3
@@ -1003,6 +1155,13 @@ video
 		text-align: left
 		transform: translateZ(0)
 		transition: all 0.3s
+		+r(1024)
+			left: 10px
+			bottom: 10px
+			max-width: 100%
+		+r(767)
+			font-size: 26px
+			line-height: 35px
 	&__item:hover &__text
 		background-color: rgba(0,0,0,.25)
 		
