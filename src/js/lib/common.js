@@ -85,6 +85,28 @@ $(document).ready(function () {
           $('.js-video-1').get(0).play();
         }
       }
+
+      if (index == 3) {
+        if ($('.js-video-2').length) {
+          $('.js-video-2').get(0).pause();
+        }
+      }
+      if (nextIndex == 3) {
+        if ($('.js-video-2').length) {
+          $('.js-video-2').get(0).play();
+        }
+      }
+
+      if (index == 4) {
+        if ($('.js-video-3').length) {
+          $('.js-video-3').get(0).pause();
+        }
+      }
+      if (nextIndex == 4) {
+        if ($('.js-video-3').length) {
+          $('.js-video-3').get(0).play();
+        }
+      }
     }
   });
 
