@@ -25,13 +25,26 @@ $(document).ready(function () {
     $('.js-svg-size').attr('y', '42%');
     $('.js-svg-size-2').attr('y', '58%');
 
-    var slider = $('.js-bg-list');
+    var slider = $('.js-bg-list'),
+      sliderInfo = $('.js-slider-info');
+
+    slider.on('init reInit afterChange', function (event, slick, currentSlide, nextSlide) {
+      var i = (currentSlide ? currentSlide : 0) + 1;
+      sliderInfo.text(i + ' из ' + slick.slideCount);
+    });
 
     slider.slick({
       slidesToShow: 1,
       slidesToScroll: 1,
       arrows: true,
-      dots: false
+      dots: false,
+      adaptiveHeight: true,
+      infinite: false,
+      customPaging: function (slider, i) {
+        return (i + 1) + '/' + slider.slideCount;
+      },
+      prevArrow: '<div class="for__prev"><svg class="icon icon-arrow"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite.svg#icon-arrow"></use></svg></div>',
+      nextArrow: '<div class="for__next"><svg class="icon icon-arrow"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/sprite.svg#icon-arrow"></use></svg></div>'
     });
 
   } else {
@@ -109,10 +122,10 @@ $(document).ready(function () {
 
   (function () {
     var scrollBtn = $('.js-next-slide'),
-        hamburgerBtn = $('.js-hamburger'),
-        navigation = $('.js-navigation'),
-        closeBtn = $('.js-nav-close'),
-        mobile = false;
+      hamburgerBtn = $('.js-hamburger'),
+      navigation = $('.js-navigation'),
+      closeBtn = $('.js-nav-close'),
+      mobile = false;
 
     if ($(window).width() <= 1024) mobile = true;
 

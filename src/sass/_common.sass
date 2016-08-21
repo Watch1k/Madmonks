@@ -920,6 +920,8 @@ video
 		background-color: rgba(255, 255, 255, .8)
 	&__container
 		padding-bottom: 200px
+		+r(1024)
+			padding-bottom: 100px
 	&__bg
 		display: none
 		position: absolute
@@ -970,12 +972,17 @@ video
 		vertical-align: top
 		transition: transform 0.3s
 		+r(1024)
+			float: left
 			+pre(0)
 			width: auto
+			padding-top: 0
+			padding-bottom: 0
+			+gutter
 		&:hover
 			background-color: #ffffff
 			transform: translateY(-20px)
 			+r(1024)
+				background-color: transparent
 				transform: translateY(0)
 	&__img
 		position: relative
@@ -995,8 +1002,12 @@ video
 			transition: all 0.3s
 	&__item:hover &__img
 		background-color: $orange
+		+r(1024)
+			background-color: transparent
 		.icon
 			color: $white
+			+r(1024)
+				color: $orange
 	&__title
 		+museo
 		color: $grey-text
@@ -1012,6 +1023,13 @@ video
 		display: none
 		background-color: #ffffff
 		transform: translateZ(0)
+		+r(1024)
+			display: block
+			position: relative
+			padding: 0
+			top: auto
+			margin-top: 20px
+			background-color: transparent
 	&__desc
 		font-family: 'PT Sans', $default-fonts
 		font-size: 14px
@@ -1036,7 +1054,37 @@ video
 			text-decoration: underline
 			&:before
 				right: -25px
+	.for__prev,
+	.for__next
+		position: absolute
+		bottom: -50px
+		font-size: 0
+		.icon
+			font-size: 21px
+			color: $orange-dark
+		&.slick-disabled
+			opacity: 0.3
+	.for__prev
+		left: gutter()
+		transform: rotate(180deg)
+	.for__next
+		right: gutter()
 		
+.paging
+	display: none
+	position: absolute
+	left: 50%
+	bottom: 52px
+	color: #555555
+	+museo
+	font-size: 16px
+	line-height: 1
+	width: 30%
+	text-align: center
+	transform: translateX(-50%)
+	+r(1024)
+		display: block
+
 .inform
 	position: relative
 	z-index: 2
