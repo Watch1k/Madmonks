@@ -1077,7 +1077,6 @@ video
 			background-position: center center
 			background-size: cover
 			background-repeat: no-repeat
-			filter: grayscale(50%)
 			transform: translateZ(0)
 			transition: all 0.3s
 		&:after
@@ -1088,15 +1087,14 @@ video
 			left: 0
 			right: 0
 			bottom: 0
-			background-color: rgba(53, 53, 53, .5)
+			background-color: rgba(50, 50, 50, .5)
 			transform: translateZ(0)
 			transition: all 0.3s
 		&:hover
 			&:before
-				filter: grayscale(0)
 				transform: scale(1.1)
 			&:after
-				background-color: rgba(69, 69, 69, 0)
+				background-color: rgba(50, 50, 50, 0)
 		&:nth-child(1)
 			+span(5.5 no-gutters)
 			&:before
