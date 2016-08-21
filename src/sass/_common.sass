@@ -432,6 +432,9 @@ svg:not(:root)
 		+r(1024)
 			display: block
 			float: none
+			max-width: 65%
+			margin-left: auto
+			margin-right: auto
 			text-align: center
 	&__phone
 		margin-left: 87px
@@ -439,7 +442,9 @@ svg:not(:root)
 		+r(1024)
 			display: block
 			float: none
-			margin-left: 0
+			max-width: 65%
+			margin-left: auto
+			margin-right: auto
 			text-align: center
 		
 @keyframes mouse
@@ -458,14 +463,15 @@ svg:not(:root)
 	+r(1200)
 		margin-left: 0
 	li
-		margin: 5px 0
-		padding: 5px
+		margin: 0
+		padding: 0
 		width: 6px
 		height: 6px
 		&:nth-child(1)
 			display: none
 		a
 			display: block
+			padding: 7px
 			&:focus,
 			&:active
 				color: $orange-dark

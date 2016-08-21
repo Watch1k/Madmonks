@@ -39,26 +39,34 @@ $(document).ready(function () {
     if (hamburger.length) {
       hamburger.on('click', function () {
 
-        hamburger.toggleClass('is-active');
+        $(this).toggleClass('is-active');
 
         if ($(this).hasClass('is-active')) {
-          $('body').css('overflow', 'hidden');
-          header.css({
-            transform: 'translateX(260px)'
+
+          main.bind('click', function () {
+            hamburger.removeClass('is-active');
+            $(this).css({transform: 'translateX(0)'});
+            $('body').css('overflow', 'auto');
+            header.css('transform', 'translateX(0)');
           });
+
+          $('body').css('overflow', 'hidden');
+          header.css('transform', 'translateX(260px)');
           main.css({transform: 'translateX(260px)'});
           if (!$(window).scrollTop() < 10) {
             footer.fadeOut(200);
           }
+
         } else {
+
+          main.unbind('click');
           $('body').css('overflow', 'auto');
-          header.css({
-            transform: 'translateX(0)'
-          });
+          header.css('transform', 'translateX(0)');
           main.css({transform: 'translateX(0)'});
           if ($(window).scrollTop() < 10) {
             footer.fadeIn(200);
           }
+
         }
       })
     }
