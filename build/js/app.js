@@ -172,6 +172,7 @@ $(document).ready(function () {
   if ($(window).width() <= 1024) {
     var hamburger = $('.js-hamburger'),
       main = $('.js-main'),
+      header = $('.js-header'),
       footer = $('.js-footer');
 
     $(window).scroll(function () {
@@ -188,20 +189,22 @@ $(document).ready(function () {
         hamburger.toggleClass('is-active');
 
         if ($(this).hasClass('is-active')) {
-          $('body').css({
-            overflow: 'hidden'
+          $('body').css('overflow', 'hidden');
+          header.css({
+            transform: 'translateX(260px)'
           });
           main.css({transform: 'translateX(260px)'});
           if (!$(window).scrollTop() < 10) {
-            footer.fadeOut();
+            footer.fadeOut(200);
           }
         } else {
-          $('body').css({
-            overflow: 'auto'
+          $('body').css('overflow', 'auto');
+          header.css({
+            transform: 'translateX(0)'
           });
           main.css({transform: 'translateX(0)'});
           if ($(window).scrollTop() < 10) {
-            footer.fadeIn();
+            footer.fadeIn(200);
           }
         }
       })
