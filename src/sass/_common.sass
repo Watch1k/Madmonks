@@ -548,6 +548,10 @@ video
 	bottom: 0
 	background: #fff url('../img/video_bg.jpg') center center no-repeat
 	background-size: cover
+	+r(1024)
+		position: relative
+		height: 568px
+		bottom: auto
 	&.is-active
 	&__mask
 		position: relative
@@ -632,8 +636,6 @@ video
 .one
 	position: relative
 	z-index: 2
-	+r(1024)
-		margin-top: 100vh
 	
 .section
 	overflow: hidden
