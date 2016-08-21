@@ -19,7 +19,7 @@ $(document).ready(function () {
   $('.one').fullpage({
     navigation: true,
     navigationPosition: 'left',
-    // scrollOverflow: true,
+    scrollOverflow: true,
     normalScrollElements: '.navigation',
     afterLoad: function (anchorLink, index) {
       //fix IE svg text
@@ -35,7 +35,6 @@ $(document).ready(function () {
       }
     },
     afterRender: function () {
-      console.log('loaded');
       $('.js-video-1').get(0).play();
     },
     onLeave: function (index, nextIndex, direction) {

@@ -19,10 +19,9 @@ $(document).ready(function () {
   $('.one').fullpage({
     navigation: true,
     navigationPosition: 'left',
-    // scrollOverflow: true,
+    scrollOverflow: true,
     normalScrollElements: '.navigation',
     afterLoad: function (anchorLink, index) {
-      console.log('loaded');
       //fix IE svg text
       $('body').css('font-size', '16px');
       $('body').attr({
