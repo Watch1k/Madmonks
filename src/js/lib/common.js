@@ -43,7 +43,7 @@ $(document).ready(function () {
 
         if ($(this).hasClass('is-active')) {
 
-          main.bind('click', function () {
+          main.bind('click tap taphold touchstart touchmove scrollstart', function () {
             hamburger.removeClass('is-active');
             $(this).css({transform: 'translateX(0)'});
             $('body').css('overflow', 'auto');
@@ -59,7 +59,7 @@ $(document).ready(function () {
 
         } else {
 
-          main.unbind('click');
+          main.unbind('tap');
           $('body').css('overflow', 'auto');
           header.css('transform', 'translateX(0)');
           main.css({transform: 'translateX(0)'});
