@@ -361,6 +361,10 @@ svg:not(:root)
 /* ===================================
 	 Main
 	 =================================== */
+video
+	+r(1024)
+		display: none
+
 .title
 	margin-bottom: 39px
 	+museo-b
@@ -408,6 +412,8 @@ svg:not(:root)
 	left: 0
 	right: 0
 	bottom: 0
+	background: #fff url('../img/video_bg.jpg') center center no-repeat
+	background-size: cover
 	&.is-active
 	&__mask
 		position: relative
@@ -417,9 +423,9 @@ svg:not(:root)
 	&__mask-text
 		font-size: 60px
 		text-transform: uppercase
-		+r(480)
-			transform: scale(0.3)
+		+r(1024)
 			transform-origin: 50% 50%
+			transform: scale(0.45)
 	&__text
 		+museo
 		& + &
@@ -551,7 +557,7 @@ svg:not(:root)
 	&:nth-child(1)
 		z-index: -1
 		pointer-events: none
-		
+
 
 /* Section #2
 	----------------------------------- */
