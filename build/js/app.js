@@ -167,12 +167,19 @@ $(document).ready(function () {
     navigation: true,
     navigationPosition: 'left',
     scrollOverflow: true,
+    normalScrollElements: '.navigation',
     afterLoad: function (anchorLink, index) {
       //fix IE svg text
       $('body').css('font-size', '16px');
       $('body').attr({
         style: 'font-size: 16px;'
       });
+      if ($(window).width() <= 1024) {
+        $('.js-svg-size').attr('y', '42%');
+        $('.js-svg-size-2').attr('y', '58%');
+
+        $.fn.fullpage.setAutoScrolling(false);
+      }
     },
     afterRender: function () {
       $('.js-video-1').get(0).play();
@@ -201,7 +208,7 @@ $(document).ready(function () {
         header.addClass('is-active');
         svgOverlay.addClass('is-active');
         hamburgerBtn.fadeIn();
-        navigation.hide();
+        navigation.hide().addClass('is-mod');
         nav.addClass('is-active');
         footer.addClass('is-hidden');
       }
@@ -210,7 +217,7 @@ $(document).ready(function () {
         header.removeClass('is-active');
         svgOverlay.removeClass('is-active');
         hamburgerBtn.fadeOut();
-        navigation.show();
+        navigation.show().removeClass('is-mod');
         nav.removeClass('is-active');
         footer.removeClass('is-hidden');
       }
@@ -252,15 +259,23 @@ $(document).ready(function () {
 
   (function () {
     var scrollBtn = $('.js-next-slide'),
-      hamburgerBtn = $('.js-hamburger');
+        hamburgerBtn = $('.js-hamburger'),
+        navigation = $('.js-navigation'),
+        closeBtn = $('.js-nav-close');
 
     scrollBtn.on('click', function () {
       $.fn.fullpage.moveTo(2);
     });
 
     hamburgerBtn.on('click', function () {
-      $(this).toggleClass('is-active')
-    })
+      $(this).toggleClass('is-active');
+      navigation.fadeIn().addClass('is-active');
+    });
+
+    closeBtn.on('click', function () {
+      navigation.fadeOut().removeClass('is-active');
+      hamburgerBtn.removeClass('is-active')
+    });
   })();
 
   (function () {
@@ -279,8 +294,6 @@ $(document).ready(function () {
       $('.js-for-hidden').hide();
     });
   })();
-
-// $.fn.fullpage.setAutoScrolling(true);
 
 // new WOW().init();
 
