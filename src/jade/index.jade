@@ -34,6 +34,31 @@ block body
 				use.entry__text-transparent(xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#s-text")
 	//end entry
 
+	//begin side
+	.side
+		//begin menu
+		nav.menu.js-menu
+			a.menu__link(href='#') Мы
+			a.menu__link.menu__link_parent.js-menu-parent(href='#') Продвижение сайтов
+			a.menu__link.menu__link_parent.js-menu-parent(href='#') Отраслевые решения
+			a.menu__link(href='#') Другие услуги
+			a.menu__link(href='#') Портфолио
+			a.menu__link(href='#') Клиенты и отзывы
+			a.menu__link(href='#') Контакты
+			a.menu__link(href='#') Блог
+		//end menu
+		a.side__btn.btn(href='#') оставить заявку
+		//begin contacts
+		.side__contacts.contacts
+			a.contacts__link(href='tel:+79091222545')
+				+i('phone')
+				span.contacts__link-text +7 909 122-25-45
+			a.contacts__link.contacts__link_mail(href='mailto:manager@madmonks.ru')
+				+i('mail')
+				span.contacts__link-text manager@madmonks.ru
+		//end contacts
+	//end side
+
 	//begin one
 	.one.js-one
 		.section.section_empty

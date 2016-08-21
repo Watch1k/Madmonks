@@ -40,8 +40,7 @@ body
 .container
 	+container
 	//transition: all 0.3s
-
-
+	
 /* Helpers
 	----------------------------------- */
 button
@@ -1226,6 +1225,88 @@ video
 	&__item:hover &__text
 		background-color: rgba(0,0,0,.25)
 		
+/* ===================================
+	 Side
+	 =================================== */
+.side
+	display: flex
+	flex-wrap: nowrap
+	flex-direction: column
+	align-items: flex-start
+	overflow-y: auto
+	position: fixed
+	z-index: 10
+	top: 0
+	left: 0
+	bottom: 0
+	width: 260px
+	background-color: #f6f6f6
+	padding: 26px 0
+	&__row
+		+pie-clearfix
+	&__btn
+		display: block
+		flex: auto 0 0
+		align-self: stretch
+		margin: auto 36px 26px 26px
+		padding: 16px 0 12px
+		text-align: center
+		+museo-b
+		font-size: 13px
+		background-color: #ffba00
+		border: 2px solid #ffba00
+		&:after
+			content: none
+			display: none
+		&:hover
+			width: auto
+	&__contacts
+		flex: auto 0 0
+		align-self: stretch
+		margin-left: 26px
+	
+.menu
+	margin-bottom: 50px
+	align-self: stretch
+	+museo
+	color: $black
+	line-height: 25px
+	&__link
+		position: relative
+		display: block
+		padding: 10px 0 10px 26px
+		&_parent
+			&:before
+				content: ''
+				position: absolute
+				right: 20px
+				top: 50%
+				margin-top: -2px
+				+arr(3,5,$orange-dark,r)
+		
+.contacts
+	&__link
+		display: block
+		font-size: 0
+		& + &
+			margin-top: 3px
+		&-text
+			font-size: 14px
+			color: #555555
+			line-height: 24px
+			vertical-align: middle
+		.icon
+			margin-right: 12px
+			font-size: 21px
+			color: #ffb238
+			vertical-align: middle
+		&_mail
+			.icon
+				font-size: 16px
+	&__link
+		&_mail &-text
+			text-decoration: underline
+	
 
 /* ===================================
 	 Other Styles
