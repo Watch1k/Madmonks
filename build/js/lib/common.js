@@ -21,7 +21,45 @@ $(document).ready(function () {
   $('body').attr({
     style: 'font-size: 16px;'
   });
+
   if ($(window).width() <= 1024) {
+    var hamburger = $('.js-hamburger'),
+      main = $('.js-main'),
+      footer = $('.js-footer');
+
+    $(window).scroll(function () {
+      if ($(window).scrollTop() > 10) {
+        footer.fadeOut();
+      } else {
+        footer.fadeIn();
+      }
+    });
+
+    if (hamburger.length) {
+      hamburger.on('click', function () {
+
+        hamburger.toggleClass('is-active');
+
+        if ($(this).hasClass('is-active')) {
+          $('body').css({
+            overflow: 'hidden'
+          });
+          main.css({transform: 'translateX(260px)'});
+          if (!$(window).scrollTop() < 10) {
+            footer.fadeOut();
+          }
+        } else {
+          $('body').css({
+            overflow: 'auto'
+          });
+          main.css({transform: 'translateX(0)'});
+          if ($(window).scrollTop() < 10) {
+            footer.fadeIn();
+          }
+        }
+      })
+    }
+
     $('.js-svg-size').attr('y', '42%');
     $('.js-svg-size-2').attr('y', '58%');
 
@@ -126,35 +164,26 @@ $(document).ready(function () {
   }
 
   (function () {
-    var scrollBtn = $('.js-next-slide'),
-      hamburgerBtn = $('.js-hamburger'),
-      navigation = $('.js-navigation'),
-      closeBtn = $('.js-nav-close'),
-      mobile = false;
-
-    if ($(window).width() <= 1024) mobile = true;
-
-    scrollBtn.on('click', function () {
-      $.fn.fullpage.moveTo(2);
-    });
-
-    hamburgerBtn.on('click', function () {
-      $(this).toggleClass('is-active');
-      if (!mobile) {
-        navigation.fadeToggle().toggleClass('is-active');
-      }
-    });
-
-    closeBtn.on('click', function () {
-      if (!mobile) {
-        navigation.fadeOut().removeClass('is-active');
-      }
-      hamburgerBtn.removeClass('is-active')
-    });
-  })();
-
-  (function () {
     if ($(window).width() > 1024) {
+      var scrollBtn = $('.js-next-slide'),
+        hamburgerBtn = $('.js-hamburger'),
+        navigation = $('.js-navigation'),
+        closeBtn = $('.js-nav-close');
+
+      scrollBtn.on('click', function () {
+        $.fn.fullpage.moveTo(2);
+      });
+
+      hamburgerBtn.on('click', function () {
+        $(this).toggleClass('is-active');
+        navigation.fadeToggle().toggleClass('is-active');
+      });
+
+      closeBtn.on('click', function () {
+        navigation.fadeOut().removeClass('is-active');
+        hamburgerBtn.removeClass('is-active')
+      });
+
       $('.js-bg-list li').hover(function () {
         if (!$(this).hasClass('is-active')) {
           $('.js-bg-list li').removeClass('is-active');

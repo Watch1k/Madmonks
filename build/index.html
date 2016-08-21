@@ -16,7 +16,21 @@
 </head>
 
 <body>
-  <div class="header js-header">
+  <!--begin side-->
+  <div class="side">
+    <!--begin menu-->
+    <nav class="menu js-menu"><a href="#" class="menu__link">Мы</a><a href="#" class="menu__link menu__link_parent js-menu-parent">Продвижение сайтов</a><a href="#" class="menu__link menu__link_parent js-menu-parent">Отраслевые решения</a><a href="#" class="menu__link">Другие услуги</a>
+      <a
+        href="#" class="menu__link">Портфолио</a><a href="#" class="menu__link">Клиенты и отзывы</a><a href="#" class="menu__link">Контакты</a><a href="#" class="menu__link">Блог</a></nav>
+    <!--end menu--><a href="#" class="side__btn btn">оставить заявку</a>
+    <!--begin contacts-->
+    <div class="side__contacts contacts"><a href="tel:+79091222545" class="contacts__link"><svg class="icon icon-phone"><use xlink:href="img/sprite.svg#icon-phone"></use></svg><span class="contacts__link-text">+7 909 122-25-45</span></a>
+      <a href="mailto:manager@madmonks.ru" class="contacts__link contacts__link_mail"><svg class="icon icon-mail"><use xlink:href="img/sprite.svg#icon-mail"></use></svg><span class="contacts__link-text">manager@madmonks.ru</span></a>
+    </div>
+    <!--end contacts-->
+  </div>
+  <!--end side-->
+  <header class="header js-header">
     <div class="header__container container">
       <!--begin hamburger-->
       <div class="hamburger hamburger_spin js-hamburger">
@@ -38,30 +52,17 @@
         <a
           href="#" class="navigation__link">Портфолио</a><a href="#" class="navigation__link">Контакты</a></nav>
       <!--end nav--><a href="tel:+79091222545" class="header__phone"><svg class="icon icon-phone"><use xlink:href="img/sprite.svg#icon-phone"></use></svg><span class="header__phone-text">+7 909 122-25-45</span></a></div>
-  </div>
-  <!--begin entry-->
-  <div class="entry"><svg class="entry__mask"><!-- Symbol with text--><symbol id="s-text"><g class="entry__mask-text"><text text-anchor="middle" x="50%" y="38%" dy="0em" class="entry__text js-svg-size">С нами вы познаете</text><text text-anchor="middle" x="50%" y="50%" dy="0em" class="entry__text">дзен поисковой</text><text text-anchor="middle" x="50%" y="62%" dy="0em" class="entry__text js-svg-size-2">оптимизации</text></g></symbol><!-- Mask with text--><mask id="m-text" maskunits="userSpaceOnUse" maskcontentunits="userSpaceOnUse"><rect width="100%" height="100%" class="entry__mask-shape"></rect><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#s-text" class="entry__mask-text"></use></mask><!-- Mask with text--><mask id="m-text" maskunits="userSpaceOnUse" maskcontentunits="userSpaceOnUse"><rect width="100%" height="100%" class="entry__mask-shape"></rect><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#s-text" class="mask__text"></use></mask></svg>
-    <div
-      class="entry__box">
-      <!-- Container for video-->
-      <div class="entry__text-fill js-svg-overlay"><video muted loop poster="img/video_bg.jpg" class="entry__video js-video-1"><source src="img/video/video.mp4" type="video/mp4"></video></div>
-      <!-- Visible SVG--><svg class="entry__inverted-mask js-svg-mask"><rect width="100%" height="100%" mask="url(#m-text)" class="entry__shape-fill"></rect><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#s-text" class="entry__text-transparent"></use></svg></div>
+  </header>
+  <div class="main js-main">
+    <!--begin entry-->
+    <div class="entry"><svg class="entry__mask"><!-- Symbol with text--><symbol id="s-text"><g class="entry__mask-text"><text text-anchor="middle" x="50%" y="38%" dy="0em" class="entry__text js-svg-size">С нами вы познаете</text><text text-anchor="middle" x="50%" y="50%" dy="0em" class="entry__text">дзен поисковой</text><text text-anchor="middle" x="50%" y="62%" dy="0em" class="entry__text js-svg-size-2">оптимизации</text></g></symbol><!-- Mask with text--><mask id="m-text" maskunits="userSpaceOnUse" maskcontentunits="userSpaceOnUse"><rect width="100%" height="100%" class="entry__mask-shape"></rect><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#s-text" class="entry__mask-text"></use></mask><!-- Mask with text--><mask id="m-text" maskunits="userSpaceOnUse" maskcontentunits="userSpaceOnUse"><rect width="100%" height="100%" class="entry__mask-shape"></rect><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#s-text" class="mask__text"></use></mask></svg>
+      <div
+        class="entry__box">
+        <!-- Container for video-->
+        <div class="entry__text-fill js-svg-overlay"><video muted loop poster="img/video_bg.jpg" class="entry__video js-video-1"><source src="img/video/video.mp4" type="video/mp4"></video></div>
+        <!-- Visible SVG--><svg class="entry__inverted-mask js-svg-mask"><rect width="100%" height="100%" mask="url(#m-text)" class="entry__shape-fill"></rect><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#s-text" class="entry__text-transparent"></use></svg></div>
   </div>
   <!--end entry-->
-  <!--begin side-->
-  <div class="side">
-    <!--begin menu-->
-    <nav class="menu js-menu"><a href="#" class="menu__link">Мы</a><a href="#" class="menu__link menu__link_parent js-menu-parent">Продвижение сайтов</a><a href="#" class="menu__link menu__link_parent js-menu-parent">Отраслевые решения</a><a href="#" class="menu__link">Другие услуги</a>
-      <a
-        href="#" class="menu__link">Портфолио</a><a href="#" class="menu__link">Клиенты и отзывы</a><a href="#" class="menu__link">Контакты</a><a href="#" class="menu__link">Блог</a></nav>
-    <!--end menu--><a href="#" class="side__btn btn">оставить заявку</a>
-    <!--begin contacts-->
-    <div class="side__contacts contacts"><a href="tel:+79091222545" class="contacts__link"><svg class="icon icon-phone"><use xlink:href="img/sprite.svg#icon-phone"></use></svg><span class="contacts__link-text">+7 909 122-25-45</span></a>
-      <a href="mailto:manager@madmonks.ru" class="contacts__link contacts__link_mail"><svg class="icon icon-mail"><use xlink:href="img/sprite.svg#icon-mail"></use></svg><span class="contacts__link-text">manager@madmonks.ru</span></a>
-    </div>
-    <!--end contacts-->
-  </div>
-  <!--end side-->
   <!--begin one-->
   <div class="one js-one">
     <div class="section section_empty"></div>
@@ -262,11 +263,12 @@
     <!--end inform-->
   </div>
   <!--end one-->
-  <div class="footer js-footer">
+  </div>
+  <footer class="footer js-footer">
     <div class="container"><button class="footer__mouse js-next-slide"></button>
       <div class="footer__info"><a href="mailto:manager@madmonks.ru" class="footer__email">manager@madmonks.ru</a><a href="tel:+79091222545" class="footer__phone">+7 909 122-25-45</a></div>
     </div>
-  </div>
+  </footer>
   <script src="js/app.js"></script>
 </body>
 

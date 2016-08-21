@@ -24,10 +24,11 @@ $grey-text: #434444
 	 Main Styles
 	 =================================== */
 body
+	position: relative
 	min-width: 320px
 	font-size: 16px
 	font-family: 'PT Sans', $default-fonts
-	color: #text-grey
+	color: $grey-text
 	font-weight: normal
 	line-height: 1.857143
 
@@ -40,6 +41,14 @@ body
 .container
 	+container
 	//transition: all 0.3s
+	
+.main
+	overflow: hidden
+	margin: 0 auto
+	position: relative
+	z-index: 1
+	min-height: 100%
+	transition: all 0.5s
 	
 /* Helpers
 	----------------------------------- */
@@ -378,7 +387,9 @@ svg:not(:root)
 	padding-bottom: 31px
 	transition: all 0.5s
 	+r(1024)
+		position: absolute
 		z-index: 1
+		transition: none
 	&.is-hidden
 		visibility: hidden
 		opacity: 0
@@ -549,7 +560,7 @@ video
 	background-size: cover
 	+r(1024)
 		position: relative
-		height: 100%
+		height: 100vh
 		bottom: auto
 	&.is-active
 	&__mask
@@ -920,7 +931,7 @@ video
 	&__container
 		padding-bottom: 200px
 		+r(1024)
-			padding-bottom: 100px
+			padding-bottom: 0
 	&__bg
 		display: none
 		position: absolute
@@ -979,7 +990,7 @@ video
 			+pre(0)
 			width: auto
 			padding-top: 0
-			padding-bottom: 0
+			padding-bottom: 100px
 			+gutter
 		&:hover
 			background-color: #ffffff
@@ -1060,7 +1071,8 @@ video
 	.for__prev,
 	.for__next
 		position: absolute
-		bottom: -50px
+		z-index: 10
+		bottom: 50px
 		font-size: 0
 		.icon
 			font-size: 21px
@@ -1229,19 +1241,21 @@ video
 	 Side
 	 =================================== */
 .side
-	display: flex
+	display: none
 	flex-wrap: nowrap
 	flex-direction: column
 	align-items: flex-start
-	overflow-y: auto
+	overflow-y: scroll
 	position: fixed
-	z-index: 10
+	z-index: 0
 	top: 0
 	left: 0
 	bottom: 0
 	width: 260px
 	background-color: #f6f6f6
 	padding: 26px 0
+	+r(1024)
+		display: flex
 	&__row
 		+pie-clearfix
 	&__btn
