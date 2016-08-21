@@ -22,6 +22,7 @@ $(document).ready(function () {
     scrollOverflow: true,
     normalScrollElements: '.navigation',
     afterLoad: function (anchorLink, index) {
+      console.log('loaded');
       //fix IE svg text
       $('body').css('font-size', '16px');
       $('body').attr({
