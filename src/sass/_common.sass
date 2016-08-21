@@ -348,6 +348,8 @@ svg:not(:root)
 		height: 32px
 		border-radius: 11px
 		border: 2px solid $white
+		+r(1024)
+			display: none
 		&:before
 			content: ''
 			position: absolute
@@ -367,11 +369,23 @@ svg:not(:root)
 		line-height: 1
 		transition: all 0.5s
 		+pie-clearfix
+		+r(1024)
+			float: none
+			line-height: 25px
 	&__email
 		float: left
+		+r(1024)
+			display: block
+			float: none
+			text-align: center
 	&__phone
 		margin-left: 87px
 		float: left
+		+r(1024)
+			display: block
+			float: none
+			margin-left: 0
+			text-align: center
 		
 @keyframes mouse
 	0%
