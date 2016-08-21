@@ -178,7 +178,7 @@ $(document).ready(function () {
         $('.js-svg-size').attr('y', '42%');
         $('.js-svg-size-2').attr('y', '58%');
 
-        $.fn.fullpage.setAutoScrolling(false);
+        $.fn.fullpage.destroy('all');
       }
     },
     afterRender: function () {
@@ -191,17 +191,7 @@ $(document).ready(function () {
         navigation = $('.js-navigation'),
         nav = $('#fp-nav'),
         footer = $('.js-footer'),
-        quote = $('.js-quote'),
         hamburgerBtn = $('.js-hamburger');
-
-      quote.each(function () {
-        if ($(this).data('quote') == nextIndex) {
-          $(this).fadeIn();
-        }
-        if ($(this).data('quote') == index) {
-          $(this).fadeOut();
-        }
-      });
 
       if (index == 1) {
         svgMask.addClass('is-active');
