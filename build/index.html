@@ -45,9 +45,7 @@
     <div
       class="entry__box">
       <!-- Container for video-->
-      <div class="entry__text-fill js-svg-overlay">
-        <!--video.entry__video.js-video-1(muted loop poster='img/video_bg.jpg')source(src='img/video/video.mp4' type='video/mp4')-->
-      </div>
+      <div class="entry__text-fill js-svg-overlay"><video muted loop poster="img/video_bg.jpg" class="entry__video js-video-1"><source data-src="img/video/video.mp4" type="video/mp4"></video></div>
       <!-- Visible SVG--><svg class="entry__inverted-mask js-svg-mask"><rect width="100%" height="100%" mask="url(#m-text)" class="entry__shape-fill"></rect><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#s-text" class="entry__text-transparent"></use></svg></div>
   </div>
   <!--end entry-->
@@ -89,7 +87,7 @@
     <!--end task-->
     <!--begin about-->
     <div class="section about">
-      <div class="about__overlay"></div><video muted loop poster="img/video_bg.jpg" class="section__video js-video-2"><source src="img/video/video_2.mp4" type="video/mp4"></video>
+      <div class="about__overlay"></div><video data-autoplay muted loop poster="img/video_bg.jpg" class="section__video js-video-2"><source data-src="img/video/video_2.mp4" type="video/mp4"></video>
       <div class="section__container container">
         <div class="section__quote">Мы не покупаем ссылки. Мы работаем с брендом</div>
         <div class="section__title title title_black">о нас</div>
@@ -135,7 +133,7 @@
     <!--end about-->
     <!--begin service-->
     <div class="section service">
-      <div class="service__overlay"></div><video muted loop poster="img/video_bg.jpg" class="section__video js-video-3"><source src="img/video/video_3.mp4" type="video/mp4"></video>
+      <div class="service__overlay"></div><video data-autoplay muted loop poster="img/video_bg.jpg" class="section__video js-video-3"><source data-src="img/video/video_3.mp4" type="video/mp4"></video>
       <div class="section__container container">
         <div class="section__quote section__quote_white">Мы знаем, что и как работает сейчас. Остальное неважно</div>
         <div class="section__title title">услуги</div>
