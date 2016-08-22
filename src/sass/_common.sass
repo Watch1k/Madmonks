@@ -173,6 +173,7 @@ svg:not(:root)
 			display: none
 		.icon
 			font-size: 20px
+			color: #3f2120
 			transition: all 0.5s
 		
 .navigation
@@ -186,7 +187,7 @@ svg:not(:root)
 	+museo
 	transform: translateZ(0)
 	+gutter
-	+r(1024)
+	+r(1199)
 		display: none
 	&__close
 		display: none
@@ -386,6 +387,8 @@ svg:not(:root)
 	bottom: 0
 	padding-bottom: 31px
 	transition: all 0.5s
+	&__container
+		+gutter
 	+r(1024)
 		position: absolute
 		z-index: 1
@@ -749,6 +752,7 @@ video
 			right: 0
 			bottom: 0
 			background-color: rgba(41, 36, 36, .6)
+			transform: translate3d(0,0,0)
 	&__mark
 		+pre(1)
 		+span(5)
@@ -924,6 +928,8 @@ video
 		left: gutter()
 		+pre(1)
 		margin-top: 7px
+		+r(767)
+			+pre(0)
 		
 
 /* Section #5

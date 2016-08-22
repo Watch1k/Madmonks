@@ -310,8 +310,9 @@ $(document).ready(function () {
           svgMask.removeClass('is-active');
           header.removeClass('is-active');
           svgOverlay.removeClass('is-active');
-          hamburgerBtn.fadeOut();
-          navigation.show().removeClass('is-mod');
+          if ($(window).width() >= 1200) {
+            navigation.show().removeClass('is-mod');
+          }
           nav.removeClass('is-active');
           footer.removeClass('is-hidden');
         }
