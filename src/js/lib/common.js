@@ -34,14 +34,6 @@ $(document).ready(function () {
       sideParentBtn = $('.js-menu-parent'),
       sideBackBtn = $('.js-side-back');
 
-    $(window).scroll(function () {
-      if ($(window).scrollTop() > 10) {
-        footer.fadeOut();
-      } else {
-        footer.fadeIn();
-      }
-    });
-
     if (hamburger.length) {
       hamburger.on('click', function () {
 
@@ -54,14 +46,13 @@ $(document).ready(function () {
             $(this).css({transform: 'translateX(0)'});
             $('body').css('overflow', 'auto');
             header.css('transform', 'translateX(0)');
+            footer.fadeIn();
           });
 
           $('body').css('overflow', 'hidden');
           header.css('transform', 'translateX(260px)');
           main.css({transform: 'translateX(260px)'});
-          if (!$(window).scrollTop() < 10) {
-            footer.fadeOut(200);
-          }
+          footer.fadeOut(200);
 
         } else {
 
@@ -69,9 +60,7 @@ $(document).ready(function () {
           $('body').css('overflow', 'auto');
           header.css('transform', 'translateX(0)');
           main.css({transform: 'translateX(0)'});
-          if ($(window).scrollTop() < 10) {
-            footer.fadeIn(200);
-          }
+          footer.fadeIn(200);
 
         }
       })

@@ -1,4 +1,283 @@
 extend includes/_layout
 block title
-	title Post
-block content
+	title Home
+block body
+	.wrapper
+		//begin side
+		.side
+			button.side__back.js-side-back ← Вернуться назад
+
+			.side__inner.js-side-inner
+				//begin menu
+				nav.menu.js-menu
+					a.menu__link(data-index='1' href='#') Мы
+					a.menu__link.menu__link_parent.js-menu-parent(data-index='2' href='#') Продвижение сайтов
+					a.menu__link.menu__link_parent.js-menu-parent(data-index='3' href='#') Отраслевые решения
+					a.menu__link(data-index='4' href='#') Другие услуги
+					a.menu__link(data-index='5' href='#') Портфолио
+					a.menu__link(data-index='6' href='#') Клиенты и отзывы
+					a.menu__link(data-index='7' href='#') Контакты
+					a.menu__link(data-index='8' href='#') Блог
+				//end menu
+
+				//begin menus
+				.menus.js-menus(data-child='2')
+					a.menus__link(href='#') Продвижение интернет-магазинов
+					a.menus__link(href='#') Продвижение сайтов строительных компаний
+					a.menus__link(href='#') Продвижение сайтов мебельных компаний
+					a.menus__link(href='#') Продвижение сайтов промышленных и производственных компаний
+				//end menus
+
+				//begin menus
+				.menus.js-menus(data-child='3')
+					a.menus__link(href='#') Отраслевые решения 1
+					a.menus__link(href='#') Отраслевые сайтов решения test 2
+					a.menus__link(href='#') Отраслевые решения 3
+					a.menus__link(href='#') Продвижение Отраслевые решения 4
+					a.menus__link(href='#') Сайтов промышленных Отраслевые решения 5
+					a.menus__link(href='#') Отраслевые решения 6
+					a.menus__link(href='#') Отраслевые решения 7
+					a.menus__link(href='#') сайтов мебельных Отраслевые решения 8
+					a.menus__link(href='#') Отраслевые решения 10
+					a.menus__link(href='#') Сайтов Отраслевые решения 11
+					a.menus__link(href='#') Отраслевые решения 12
+				//end menus
+
+			a.side__btn.btn(href='#') оставить заявку
+			//begin contacts
+			.side__contacts.contacts
+				a.contacts__link(href='tel:+79091222545')
+					+i('phone')
+					span.contacts__link-text +7 909 122-25-45
+				a.contacts__link.contacts__link_mail(href='mailto:manager@madmonks.ru')
+					+i('mail')
+					span.contacts__link-text manager@madmonks.ru
+			//end contacts
+		//end side
+
+		include includes/_header-full
+		.main.js-main
+			//begin entry
+			.entry
+				svg.entry__mask
+					// Symbol with text
+					symbol#s-text
+						g.entry__mask-text
+							text.entry__text.js-svg-size(text-anchor='middle', x='50%', y='38%', dy='0em')
+								| С нами вы познаете
+							text.entry__text(text-anchor='middle', x='50%', y='50%', dy='0em')
+								| дзен поисковой
+							text.entry__text.js-svg-size-2(text-anchor='middle', x='50%', y='62%', dy='0em')
+								| оптимизации
+					// Mask with text
+					mask#m-text(maskunits='userSpaceOnUse', maskcontentunits='userSpaceOnUse')
+						rect.entry__mask-shape(width='100%', height='100%')
+						use.entry__mask-text(xmlns:xlink='http://www.w3.org/1999/xlink', xlink:href='#s-text')
+				.entry__box
+					// Container for video
+					.entry__text-fill.js-svg-overlay
+						video.entry__video.js-video-1(muted loop poster='img/video_bg.jpg')
+							source(src='img/video/video.mp4' type='video/mp4')
+					// Visible SVG
+					svg.entry__inverted-mask.js-svg-mask
+						rect.entry__shape-fill(width='100%', height='100%', mask='url(#m-text)')
+						use.entry__text-transparent(xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#s-text")
+			//end entry
+
+			//begin one
+			.one.js-one
+				.section.section_empty
+				//begin task
+				.section.task
+					.section__container.container
+						.section__title.title делаем
+						.section__row
+							ul.task__mark.mark
+								li.mark__item
+									+i('done')
+									span.mark__text Формируем бренд в сети интернет
+								li.mark__item
+									+i('done')
+									span.mark__text Популяризируем товары / работы / услуги
+								li.mark__item
+									+i('done')
+									span.mark__text Вызываем доверие к компании
+								li.mark__item
+									+i('done')
+									span.mark__text Работаем с заинтересованной аудиторией
+							ul.task__mark.mark
+								li.mark__item
+									+i('done')
+									span.mark__text Увеличиваем видимость интернет ресурса (сайта) в поисковых системах
+								li.mark__item
+									+i('done')
+									span.mark__text Увеличиваем количественную массу потенциальных потребителей
+								li.mark__item
+									+i('done')
+									span.mark__text Стабильность и длительный эффект
+						.section__title.title знаем
+						.section__row
+							ul.task__mark.mark
+								li.mark__item
+									+i('done')
+									span.mark__text Поисковые системы, их требования и рекомендации
+								li.mark__item
+									+i('done')
+									span.mark__text Как сделать идеальную структуру сайта
+								li.mark__item
+									+i('done')
+									span.mark__text Как сделать сайт удобным
+							ul.task__mark.mark
+								li.mark__item
+									+i('done')
+									span.mark__text Требования, предъявляемые к контенту
+								li.mark__item
+									+i('done')
+									span.mark__text Какие недостатки и ошибки исправить на сайте
+								li.mark__item
+									+i('done')
+									span.mark__text Как составить актуальный список ключевых слов
+				//end task
+
+				//begin about
+				.section.about
+					.about__overlay
+					video.section__video.js-video-2(muted loop poster='img/video_bg.jpg')
+						source(src='img/video/video_2.mp4' type='video/mp4')
+					.section__container.container
+						.section__quote Мы не покупаем ссылки. Мы работаем с брендом
+						.section__title.title.title_black о нас
+						.section__row
+							p.about__text Мы не разрабатываем сайты, мы не даем контекст, мы не занимаемся ничем,
+								span.about__text-orange &nbsp;кроме аналитики и улучшения сайтов клиентов под требования поисковых систем.
+							p.about__text Мы не засоряем свой разум лишним мусором, но помогаем с ним разобраться. Проще говоря - у нас SEO головного мозга.
+						.about__subtitle Чем мы выделяемся:
+						.section__row
+							//begin excel
+							.excel
+								.excel__col
+									.excel__item
+										.excel__number 1
+										.excel__text INHOUSE подход к клиенту. Хотя мы и независимые консультанты, но мы ближе, чем вы думаете.
+									.excel__item
+										.excel__number 2
+										.excel__text Глубокое вовлечение в бизнес клиента, его тематику.
+								.excel__col
+									.excel__item
+										.excel__number 3
+										.excel__text Громадный опыт работы с коммерческими проектами любого уровня и тематики.
+									.excel__item
+										.excel__number 4
+										.excel__text Всегда открыты для обсуждения и консультирования по проекту.
+								.excel__col
+									.excel__item
+										.excel__number 5
+										.excel__text Мы не потоковая компания.
+							//end excel
+				//end about
+
+				//begin service
+				.section.service
+					.service__overlay
+					video.section__video.js-video-3(muted loop poster='img/video_bg.jpg')
+						source(src='img/video/video_3.mp4' type='video/mp4')
+					.section__container.container
+						.section__quote.section__quote_white Мы знаем, что и как работает сейчас. Остальное неважно
+						.section__title.title услуги
+						.section__row
+							.service__col
+								p.service__text Нынешний тренд ведения интернет рекламы – performance marketing, где компании окучивают все каналы продаж – SEO, контекстная реклама, SMM, e-mail рассылки и прочее. Да, круто, но где гарантии, что в этих компаниях сидит грамотный отдел поисковой оптимизации? Да и не каждому бизнесу нужно это, не говоря о стоимости услуг за данный комплекс работ.
+								p.service__text К слову – если вам нужна СРОЧНОСТЬ что-то продвинуть, то извините. У вас кризис или что-то нехорошее с бизнесом.
+							.service__col
+								p.service__text Мы подумаем и дадим вам результат в виде позиций / поситителей / совершенных действий (CTA - call to action) в зависимости от специфики Вашей деятельности. Вы почувствуете эффективность поисковой оптимизации. НО не расслабляйтесь! Вам придется тоже поработать.
+						a.service__btn.btn(href='#') весь список услуг
+				//end service
+
+				//begin whom
+				.section.whom.js-bg-container
+					.whom__bg.whom__bg_1.js-bg
+					.whom__bg.whom__bg_2.js-bg
+					.whom__bg.whom__bg_3.js-bg
+					.whom__bg.whom__bg_4.js-bg
+					.whom__bg.whom__bg_5.js-bg
+					.whom__bg.whom__bg_6.js-bg
+					.section__container.whom__container.container
+						.section__quote.whom__quote Мы найдем применение наших услуг практически всем
+						.section__title.title.title_black кому
+						.paging.js-slider-info
+						ul.for.js-bg-list
+							li.for__item
+								.for__img
+									+i('for-1')
+								.for__text
+									.for__title Продвижение интернет-магазинов
+									.for__hidden.js-for-hidden
+										.for__desc Работаем с любыми (кроме запрещенных) тематиками интернет-магазинов: электроника, бытовые товары, игрушки, стройматериалы, лакокрасочные материалы, спортивное питание, мебель, одежда и т.д.
+										a.for__btn(href='#') Подробнее
+							li.for__item
+								.for__img
+									+i('for-2')
+								.for__text
+									.for__title Продвижение сайтов строительных компаний
+									.for__hidden.js-for-hidden
+										.for__desc Работаем с любыми (кроме запрещенных) тематиками интернет-магазинов: электроника, бытовые товары, игрушки, стройматериалы, лакокрасочные материалы, спортивное питание, мебель, одежда и т.д.
+										a.for__btn(href='#') Подробнее
+							li.for__item
+								.for__img
+									+i('for-3')
+								.for__text
+									.for__title Продвижение сайтов мебельных компаний
+									.for__hidden.js-for-hidden
+										.for__desc Работаем с любыми (кроме запрещенных) тематиками интернет-магазинов: электроника, бытовые товары, игрушки, стройматериалы, лакокрасочные материалы, спортивное питание, мебель, одежда и т.д.
+										a.for__btn(href='#') Подробнее
+							li.for__item
+								.for__img
+									+i('for-4')
+								.for__text
+									.for__title Продвижение сайтов промышленных и производственных компаний
+									.for__hidden.js-for-hidden
+										.for__desc Работаем с любыми (кроме запрещенных) тематиками интернет-магазинов: электроника, бытовые товары, игрушки, стройматериалы, лакокрасочные материалы, спортивное питание, мебель, одежда и т.д.
+										a.for__btn(href='#') Подробнее
+							li.for__item
+								.for__img
+									+i('for-5')
+								.for__text
+									.for__title Продвижение юридических компаний
+									.for__hidden.js-for-hidden
+										.for__desc Работаем с любыми (кроме запрещенных) тематиками интернет-магазинов: электроника, бытовые товары, игрушки, стройматериалы, лакокрасочные материалы, спортивное питание, мебель, одежда и т.д.
+										a.for__btn(href='#') Подробнее
+							li.for__item
+								.for__img
+									+i('for-6')
+								.for__text
+									.for__title Продвижение компаний с другими направлениями
+									.for__hidden.js-for-hidden
+										.for__desc Работаем с любыми (кроме запрещенных) тематиками интернет-магазинов: электроника, бытовые товары, игрушки, стройматериалы, лакокрасочные материалы, спортивное питание, мебель, одежда и т.д.
+										a.for__btn(href='#') Подробнее
+				//end whom
+
+				//begin inform
+				.section.inform
+					.section__container.inform__container.container
+						.inform__quote.section__quote.section__quote_white Быстрый результат и качественная работа наше кредо
+						//begin cards
+						.cards
+							a.cards__item(href='#')
+								.cards__text о нас
+							a.cards__item(href='#')
+								.cards__text услуги
+							a.cards__item(href='#')
+								.cards__text кейсы/портфолио
+							a.cards__item(href='#')
+								.cards__text клиенты и отзывы
+							a.cards__item(href='#')
+								.cards__text как мы работаем?
+							a.cards__item(href='#')
+								.cards__text Что нужно знать, чтобы работать с нами?
+							a.cards__item(href='#')
+								.cards__text отличия от других компаний
+						//end cards
+				//end inform
+			//end one
+
+		include includes/_footer-full
