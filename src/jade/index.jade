@@ -5,17 +5,44 @@ block body
 	.wrapper
 		//begin side
 		.side
-			//begin menu
-			nav.menu.js-menu
-				a.menu__link(href='#') Мы
-				a.menu__link.menu__link_parent.js-menu-parent(href='#') Продвижение сайтов
-				a.menu__link.menu__link_parent.js-menu-parent(href='#') Отраслевые решения
-				a.menu__link(href='#') Другие услуги
-				a.menu__link(href='#') Портфолио
-				a.menu__link(href='#') Клиенты и отзывы
-				a.menu__link(href='#') Контакты
-				a.menu__link(href='#') Блог
-			//end menu
+			button.side__back.js-side-back ← Вернуться назад
+
+			.side__inner.js-side-inner
+				//begin menu
+				nav.menu.js-menu
+					a.menu__link(data-index='1' href='#') Мы
+					a.menu__link.menu__link_parent.js-menu-parent(data-index='2' href='#') Продвижение сайтов
+					a.menu__link.menu__link_parent.js-menu-parent(data-index='3' href='#') Отраслевые решения
+					a.menu__link(data-index='4' href='#') Другие услуги
+					a.menu__link(data-index='5' href='#') Портфолио
+					a.menu__link(data-index='6' href='#') Клиенты и отзывы
+					a.menu__link(data-index='7' href='#') Контакты
+					a.menu__link(data-index='8' href='#') Блог
+				//end menu
+
+				//begin menus
+				.menus.js-menus(data-child='2')
+					a.menus__link(href='#') Продвижение интернет-магазинов
+					a.menus__link(href='#') Продвижение сайтов строительных компаний
+					a.menus__link(href='#') Продвижение сайтов мебельных компаний
+					a.menus__link(href='#') Продвижение сайтов промышленных и производственных компаний
+				//end menus
+
+				//begin menus
+				.menus.js-menus(data-child='3')
+					a.menus__link(href='#') Отраслевые решения 1
+					a.menus__link(href='#') Отраслевые сайтов решения test 2
+					a.menus__link(href='#') Отраслевые решения 3
+					a.menus__link(href='#') Продвижение Отраслевые решения 4
+					a.menus__link(href='#') Сайтов промышленных Отраслевые решения 5
+					a.menus__link(href='#') Отраслевые решения 6
+					a.menus__link(href='#') Отраслевые решения 7
+					a.menus__link(href='#') сайтов мебельных Отраслевые решения 8
+					a.menus__link(href='#') Отраслевые решения 10
+					a.menus__link(href='#') Сайтов Отраслевые решения 11
+					a.menus__link(href='#') Отраслевые решения 12
+				//end menus
+
 			a.side__btn.btn(href='#') оставить заявку
 			//begin contacts
 			.side__contacts.contacts
