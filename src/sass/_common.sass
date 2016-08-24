@@ -106,7 +106,7 @@ svg:not(:root)
 	padding-top: 33px
 	transition: all 0.5s
 	+pie-clearfix
-	+r(1024)
+	+r(1023)
 		pointer-events: all
 		padding-top: 8px
 		padding-bottom: 8px
@@ -135,7 +135,7 @@ svg:not(:root)
 			font-size: 21px
 			color: #ffb238
 			vertical-align: middle
-		+r(1024)
+		+r(1023)
 			display: block
 			float: right
 			margin-top: 8px
@@ -147,7 +147,7 @@ svg:not(:root)
 	float: left
 	font-size: 0
 	+pre(10px)
-	+r(1024)
+	+r(1023)
 		+pre(33px)
 	&__link
 		display: block
@@ -159,7 +159,7 @@ svg:not(:root)
 			color: #ffffff
 			transform: scale(1.15,1.15)
 			transition: all 0.5s
-			+r(1024)
+			+r(1023)
 				font-size: 36px
 				transform: scale(1,1)
 	&__text
@@ -169,7 +169,7 @@ svg:not(:root)
 		margin-top: 16px
 		margin-left: 12px
 		vertical-align: top
-		+r(1024)
+		+r(1023)
 			display: none
 		.icon
 			font-size: 20px
@@ -195,8 +195,8 @@ svg:not(:root)
 		z-index: 1
 		top: 20px
 		right: 20px
-		width: 33px
-		height: 33px
+		width: 27px
+		height: 27px
 		cursor: pointer
 		&:before,
 		&:after
@@ -206,7 +206,7 @@ svg:not(:root)
 			left: 0
 			top: 50%
 			margin-top: -1px
-			background-color: #ffffff
+			background-color: #1e1e1e
 			width: 100%
 			height: 3px
 			transform: rotate(45deg)
@@ -233,27 +233,31 @@ svg:not(:root)
 			&:before
 				width: 100%
 	&.is-mod
-		background-color: rgba(0,0,0,.85)
+		background-color: #f6f6f6
 		position: fixed
-		left: 0
 		top: 0
-		right: 0
+		right: -420px
 		bottom: 0
+		width: 420px
 		flex-direction: column
 		justify-content: center
 		align-items: center
+		transition: right 0.3s
 		&.is-active
 			display: flex !important
+			right: 0
+			transition: right 0.3s
 	&.is-mod &__close
 		display: block
 	&.is-mod &__link
 		position: relative
-		top: 75px
+		top: 50px
 		display: inline-block
 		margin-left: 0
 		padding: 20px 30px
-		font-size: 24px
+		font-size: 20px
 		text-transform: uppercase
+		color: #1e1e1e
 		opacity: 0
 		transition: all 0.2s
 		&:hover
@@ -276,10 +280,10 @@ svg:not(:root)
 @keyframes anim-top
 	0%
 		opacity: 0
-		top: 75px
+		top: 50px
 	100%
 		opacity: 1
-		top: 0
+		top: -25px
 
 .hamburger
 	pointer-events: auto
@@ -301,7 +305,7 @@ svg:not(:root)
 	border: 0
 	margin: 12px 0 0
 	overflow: visible
-	+r(1024)
+	+r(1023)
 		display: block
 		float: left
 		position: relative
@@ -328,7 +332,7 @@ svg:not(:root)
 		transition-property: transform, -webkit-transform
 		transition-duration: 0.15s
 		transition-timing-function: ease
-		+r(1024)
+		+r(1023)
 			background-color: #ffffff
 		&::before, &::after
 			width: 23px
@@ -340,7 +344,7 @@ svg:not(:root)
 			transition-property: transform, -webkit-transform
 			transition-duration: 0.15s
 			transition-timing-function: ease
-			+r(1024)
+			+r(1023)
 				background-color: #ffffff
 		&::before, &::after
 			content: ""
@@ -389,7 +393,7 @@ svg:not(:root)
 	transition: all 0.5s
 	&__container
 		+gutter
-	+r(1024)
+	+r(1023)
 		position: absolute
 		z-index: 1
 		bottom: auto
@@ -410,7 +414,7 @@ svg:not(:root)
 		height: 32px
 		border-radius: 11px
 		border: 2px solid $white
-		+r(1024)
+		+r(1023)
 			display: none
 		&:before
 			content: ''
@@ -431,12 +435,12 @@ svg:not(:root)
 		line-height: 1
 		transition: all 0.5s
 		+pie-clearfix
-		+r(1024)
+		+r(1023)
 			float: none
 			line-height: 25px
 	&__email
 		float: left
-		+r(1024)
+		+r(1023)
 			display: block
 			float: none
 			max-width: 65%
@@ -446,7 +450,7 @@ svg:not(:root)
 	&__phone
 		margin-left: 87px
 		float: left
-		+r(1024)
+		+r(1023)
 			display: block
 			float: none
 			max-width: 65%
@@ -514,7 +518,7 @@ svg:not(:root)
 	 Main
 	 =================================== */
 video
-	+r(1024)
+	+r(1279)
 		display: none
 
 .title
@@ -569,7 +573,7 @@ video
 	bottom: 0
 	background: #fff url('../img/video_bg.jpg') center center no-repeat
 	background-size: cover
-	+r(1024)
+	+r(1023)
 		position: relative
 		height: 568px
 		bottom: auto
@@ -582,7 +586,7 @@ video
 	&__mask-text
 		font-size: 60px
 		text-transform: uppercase
-		+r(1024)
+		+r(1023)
 			font-size: 26px
 	&__text
 		+museo
@@ -613,7 +617,7 @@ video
 			right: 0
 			bottom: 0
 			pointer-events: none
-			transition: all 0.5s
+			transition: all 1.4s
 		&.is-active:before
 			background-color: rgba(0,0,0,.6)
 	&__video
@@ -638,7 +642,7 @@ video
 		top: 0
 		left: 0
 		cursor: default
-		transition: all 0.5s
+		transition: all 1.4s
 		&.is-active
 			opacity: 0
 			transform: scale(2)
@@ -648,7 +652,7 @@ video
 		width: 100%
 		height: 100%
 		fill: $orange-dark
-		transition: all 0.5s
+		transition: all 1.4s
 	&__text-transparent
 		fill: transparent
 		
@@ -663,12 +667,12 @@ video
 	background: transparent center center no-repeat
 	background-size: cover
 	transform: translateZ(0)
-	+r(1024)
+	+r(1023)
 		padding-left: 3px
 		padding-right: 3px
 	&_empty
 		height: 100vh
-		+r(1024)
+		+r(1023)
 			height: 0
 	&__container
 		padding-top: 120px
@@ -676,36 +680,48 @@ video
 		position: relative
 		z-index: 3
 		transform: translateZ(0)
-		+r(1024)
+		+r(1023)
 			padding-top: 40px
 			padding-bottom: 40px
 	&__quote
 		position: absolute
-		left: span(2)
-		top: 63px
+		max-width: 1200px
+		margin-left: auto
+		margin-right: auto
+		left: 0
+		right: 0
+		padding-left: 150px
+		padding-right: 10px
+		top: 60px
 		color: $grey
 		font-style: italic
 		line-height: 1
-		+gutter()
-		+r(1024)
+		z-index: 10
+		transform: translate3d(0,0,0)
+		+r(1023)
 			top: 50px
 			left: auto
 			right: 3px
 			text-align: right
 			max-width: 60%
+			padding-left: 0
 			+r(767)
 				display: none
-		&_white
-			color: $white
 		&:before
 			content: ''
 			position: absolute
 			z-index: 1
 			top: 50%
-			left: -30px
+			left: 120px
 			width: 20px
 			height: 1px
 			background-color: $grey
+			+r(1023)
+				left: -40px
+		&_white
+			color: $white
+			&:before
+				background-color: #fff
 	&__video
 		position: absolute
 		z-index: 1
@@ -739,7 +755,7 @@ video
 /* Section #2
 	----------------------------------- */
 .task
-	+r(1024)
+	+r(1023)
 		background: #fff url('../img/video_bg.jpg') center center no-repeat
 		background-size: cover
 		&:before
@@ -793,7 +809,7 @@ video
 .about
 	background: #fff url('../img/about_bg.jpg') center center no-repeat
 	background-size: cover
-	+r(1024)
+	+r(1023)
 		background-position: center bottom
 	//&__container
 	//	padding-bottom: 200px
@@ -844,7 +860,7 @@ video
 	&__col
 		+pre(1)
 		+span(3)
-		+r(1024)
+		+r(1023)
 			+span(4.5)
 			+r(767)
 				+pre(0)
@@ -907,7 +923,7 @@ video
 		+span(5)
 		& + &
 			+pre(0)
-		+r(1024)
+		+r(1023)
 			+span(10)
 			& + &
 				+pre(1)
@@ -950,7 +966,7 @@ video
 		background-color: rgba(255, 255, 255, .8)
 	&__container
 		padding-bottom: 200px
-		+r(1024)
+		+r(1023)
 			padding-bottom: 0
 	&__bg
 		display: none
@@ -965,7 +981,7 @@ video
 		z-index: 0
 		pointer-events: none
 		transform: translateZ(0)
-		+r(1024)
+		+r(1023)
 			&:first-child
 				display: block
 				z-index: 1
@@ -1005,17 +1021,18 @@ video
 		display: inline-block
 		vertical-align: top
 		transition: transform 0.3s
-		+r(1024)
+		+r(1023)
 			float: left
 			+pre(0)
 			width: auto
 			padding-top: 0
 			padding-bottom: 100px
 			+gutter
-		&:hover
+		&:hover,
+		&.is-active
 			background-color: #ffffff
 			transform: translateY(-20px)
-			+r(1024)
+			+r(1023)
 				background-color: transparent
 				transform: translateY(0)
 	&__img
@@ -1036,11 +1053,11 @@ video
 			transition: all 0.3s
 	&__item:hover &__img
 		background-color: $orange
-		+r(1024)
+		+r(1023)
 			background-color: transparent
 		.icon
 			color: $white
-			+r(1024)
+			+r(1023)
 				color: $orange
 	&__title
 		+museo
@@ -1057,7 +1074,7 @@ video
 		display: none
 		background-color: #ffffff
 		transform: translateZ(0)
-		+r(1024)
+		+r(1023)
 			display: block
 			position: relative
 			padding: 0
@@ -1117,7 +1134,7 @@ video
 	width: 30%
 	text-align: center
 	transform: translateX(-50%)
-	+r(1024)
+	+r(1023)
 		display: block
 
 .inform
@@ -1126,13 +1143,13 @@ video
 	background: #fff url('../img/inform_bg.jpg') center center no-repeat
 	background-size: cover
 	transform: translateZ(0)
-	+r(1024)
+	+r(1023)
 		padding-top: 40px
 	+r(767)
 		padding-top: 0
 	&__quote
-		+r(1024)
-			top: -7px
+		+r(1023)
+			top: 30px
 	&:before
 		content: ''
 		position: absolute
@@ -1247,7 +1264,7 @@ video
 		text-align: left
 		transform: translateZ(0)
 		transition: all 0.3s
-		+r(1024)
+		+r(1023)
 			left: 10px
 			bottom: 10px
 			max-width: 100%
@@ -1274,7 +1291,7 @@ video
 	width: 260px
 	background-color: #f6f6f6
 	padding: 26px 0
-	+r(1024)
+	+r(1023)
 		display: flex
 	&__row
 		+pie-clearfix

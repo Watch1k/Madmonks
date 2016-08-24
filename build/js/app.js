@@ -172,7 +172,7 @@ $(document).ready(function () {
     style: 'font-size: 16px;'
   });
 
-  if ($(window).width() <= 1024) {
+  if ($(window).width() < 1024) {
     var hamburger = $('.js-hamburger'),
       main = $('.js-main'),
       header = $('.js-header'),
@@ -270,7 +270,7 @@ $(document).ready(function () {
       slidesToScroll: 1,
       arrows: true,
       dots: false,
-      adaptiveHeight: true,
+      adaptiveHeight: false,
       infinite: false,
       customPaging: function (slider, i) {
         return (i + 1) + '/' + slider.slideCount;
@@ -284,6 +284,7 @@ $(document).ready(function () {
       navigation: true,
       navigationPosition: 'left',
       scrollOverflow: true,
+      fade: true,
       normalScrollElements: '.js-navigation',
       afterRender: function () {
         $('.js-video-1').get(0).play();
@@ -315,6 +316,14 @@ $(document).ready(function () {
           }
           nav.removeClass('is-active');
           footer.removeClass('is-hidden');
+        }
+
+        if (index == 1 && nextIndex == 2) {
+          $.fn.fullpage.setScrollingSpeed(1500);
+        } else if (index == 2 && nextIndex == 1) {
+          $.fn.fullpage.setScrollingSpeed(1000);
+        } else {
+          $.fn.fullpage.setScrollingSpeed(700);
         }
 
         if (index < 3 && nextIndex > 2) {
@@ -354,7 +363,7 @@ $(document).ready(function () {
   }
 
   (function () {
-    if ($(window).width() > 1024) {
+    if ($(window).width() >= 1024) {
       var scrollBtn = $('.js-next-slide'),
         hamburgerBtn = $('.js-hamburger'),
         navigation = $('.js-navigation'),
@@ -388,6 +397,20 @@ $(document).ready(function () {
         $(this).removeClass('is-active').css('z-index', '1');
         $('.js-for-hidden').hide();
       });
+
+      $('.js-bg-list li').on('tap', function () {
+        if (!$(this).hasClass('is-active')) {
+          $('.js-bg-list li').removeClass('is-active').css('z-index', '1');
+          $('.js-for-hidden').hide();
+          var index = $(this).index();
+          $(this).css('z-index', '2').addClass('is-active').find('.js-for-hidden').show();
+          $('.js-bg').fadeOut(function () {
+            $(this).css('z-index', '0');
+          });
+          $('.js-bg').eq(index).css('z-index', '1').fadeIn();
+        }
+      });
+
     }
   })();
 
