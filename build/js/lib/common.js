@@ -1,6 +1,5 @@
 /* Common JS */
 $(document).ready(function () {
-  $('video').play();
 
   //for IE9
   svg4everybody();
