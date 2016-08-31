@@ -233,7 +233,7 @@ $(document).ready(function () {
         hamburgerBtn.removeClass('is-active')
       });
 
-      $('.js-bg-list li').hover(function () {
+      $('.js-bg-list li').on('mouseenter', function () {
         if (!$(this).hasClass('is-active')) {
           $('.js-bg-list li').removeClass('is-active');
           var index = $(this).index();
@@ -243,15 +243,16 @@ $(document).ready(function () {
           });
           $('.js-bg').eq(index).css('z-index', '1').fadeIn();
         }
-      }, function () {
+      });
+      $('.js-bg-list li').on('mouseleave', function () {
         $(this).removeClass('is-active').css('z-index', '1');
         $('.js-for-hidden').hide();
       });
 
       $('.js-bg-list li').on('tap', function () {
+        $('.js-bg-list li').removeClass('is-active').css('z-index', '1');
+        $('.js-for-hidden').hide();
         if (!$(this).hasClass('is-active')) {
-          $('.js-bg-list li').removeClass('is-active').css('z-index', '1');
-          $('.js-for-hidden').hide();
           var index = $(this).index();
           $(this).css('z-index', '2').addClass('is-active').find('.js-for-hidden').show();
           $('.js-bg').fadeOut(function () {
