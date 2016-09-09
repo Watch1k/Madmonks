@@ -137,7 +137,7 @@ $(document).ready(function () {
     $('.one').fullpage({
       navigation: true,
       navigationPosition: 'left',
-      scrollOverflow: true,
+      // scrollOverflow: true,
       fade: true,
       normalScrollElements: '.js-navigation',
       afterRender: function () {
