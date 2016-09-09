@@ -689,6 +689,7 @@ video
 	background: transparent center center no-repeat
 	background-size: cover
 	transform: translateZ(0)
+	transform-style: preserve-3d
 	+r(1023)
 		padding-left: 3px
 		padding-right: 3px
@@ -1317,6 +1318,8 @@ video
 	width: 260px
 	background-color: #f6f6f6
 	padding: 26px 0
+	transform: translate3d(0,0,0)
+	transform-style: preserve-3d
 	+r(1023)
 		display: flex
 	&__row
