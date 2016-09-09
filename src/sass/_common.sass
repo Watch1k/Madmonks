@@ -33,7 +33,6 @@ body
 	line-height: 1.857143
 
 .wrapper
-	position: relative
 	overflow: hidden
 	margin: 0 auto
 	min-height: 100%
@@ -48,9 +47,6 @@ body
 	z-index: 1
 	min-height: 100%
 	transition: all 0.5s
-	+r(1024)
-		height: 100vh
-		overflow-y: auto
 	//transform: translate3d(0,0,0)
 	
 	
@@ -103,7 +99,7 @@ svg:not(:root)
 	 =================================== */
 .header
 	pointer-events: none
-	position: absolute
+	position: fixed
 	z-index: 101
 	top: 0
 	left: 0
@@ -447,8 +443,7 @@ svg:not(:root)
 	transition: all 0.5s
 	&__container
 		+gutter
-	+r(1024)
-		display: none
+	+r(1023)
 		position: absolute
 		z-index: 1
 		bottom: auto
@@ -1318,7 +1313,7 @@ video
 	flex-direction: column
 	align-items: flex-start
 	overflow-y: scroll
-	position: absolute
+	position: fixed
 	z-index: 0
 	top: 0
 	left: 0
