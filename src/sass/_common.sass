@@ -1021,6 +1021,7 @@ video
 		display: inline-block
 		vertical-align: top
 		transition: transform 0.3s
+		user-select: none
 		+r(1023)
 			float: left
 			+pre(0)
@@ -1046,6 +1047,9 @@ video
 		text-align: center
 		transition: all 0.3s
 		+vertical
+		&:nth-child(5)
+			width: 45px
+			height: 45px
 		.icon
 			font-size: 45px
 			color: $orange
