@@ -151,6 +151,10 @@ b){if(!b||this.visible){clearTimeout(this.fadeTimeout);this.fadeTimeout=null;var
 /* Common JS */
 $(document).ready(function () {
 
+  $(window).load(function () {
+    $('.loader').fadeOut('slow');
+  });
+
   //for IE9
   svg4everybody();
 
@@ -316,6 +320,7 @@ $(document).ready(function () {
           }
           nav.removeClass('is-active');
           footer.removeClass('is-hidden');
+          hamburgerBtn.fadeOut();
         }
 
         if (index == 1 && nextIndex == 2) {

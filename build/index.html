@@ -16,7 +16,9 @@
 </head>
 
 <body>
-  <div class="wrapper">
+  <div class="loader"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 26.7 37.63" class="loader__svg"><title>logo</title><path stroke="#ffffff" stroke-width="0.5" d="M23.89 19.98a6 6 0 0 0 .5-2.38v-.89a11 11 0 0 0-5.62-9.61C17.88 3.88 16 0 13.35 0S8.82 3.88 7.93 7.1a11 11 0 0 0-5.62 9.61v.89a6 6 0 0 0 .5 2.38 6.13 6.13 0 0 0 3.33 11.33h14.42a6.13 6.13 0 0 0 3.33-11.33zM6.14 29.15a4 4 0 0 1-2.16-7.41 6 6 0 0 0 4.28 1.85h10.1a6 6 0 0 0 4.32-1.85 4 4 0 0 1-2.16 7.41H6.14zM4.43 17.6v-.89a8.89 8.89 0 0 1 2.92-6.59v.44a3.15 3.15 0 0 0 .62 2 7.09 7.09 0 0 0-1.41 4.26 2.49 2.49 0 0 0 2.46 2.49h3.24v2.12h-4a3.84 3.84 0 0 1-1.64-.37 3.89 3.89 0 0 1-1.91-2 3.85 3.85 0 0 1-.28-1.46zm6-11.54c.79-2.1 1.92-3.94 2.89-3.94s2.1 1.85 2.89 3.94c.15.41.29.82.42 1.24s.24.87.33 1.28a9.7 9.7 0 0 1 .26 2 2.27 2.27 0 0 1-.05.53.49.49 0 0 1-.06.16 1 1 0 0 1-.46.06 11.5 11.5 0 0 1-1.21-.1l-.68-.07c-.43 0-.89-.08-1.38-.08a15 15 0 0 0-1.56.09l-.51.06a12.35 12.35 0 0 1-1.25.1c-.37 0-.53 0-.59-.2a2 2 0 0 1 0-.55 9.7 9.7 0 0 1 .26-2c.09-.42.2-.85.33-1.28s.2-.84.4-1.24zm11.83 10.65v.89a3.87 3.87 0 0 1-.93 2.51 3.89 3.89 0 0 1-1.3 1 3.84 3.84 0 0 1-1.64.37h-4v-2.17h3.27a2.49 2.49 0 0 0 2.48-2.48v-.12a6.76 6.76 0 0 0-1.39-4.11 3.12 3.12 0 0 0 .61-2v-.44a8.89 8.89 0 0 1 2.9 6.55zm-12.19-3.27a13.66 13.66 0 0 0 1.49-.12 16.22 16.22 0 0 1 1.83-.14 15.82 15.82 0 0 1 1.87.13 13.13 13.13 0 0 0 1.45.11 4.67 4.67 0 0 1 1.34 3.27v.17a.36.36 0 0 1-.36.36H9.02a.36.36 0 0 1-.36-.36 5 5 0 0 1 1.39-3.44z" class="loader__1"></path><path stroke-width="0.5" stroke="#ffffff" d="M20.43 24.53H6.26a1.06 1.06 0 0 0 0 2.12h14.17a1.06 1.06 0 0 0 0-2.12z" class="loader__2"></path><ellipse cx="13.33" cy="36.84" rx="6.85" ry=".79" fill="#4b2f27" opacity="0.25" class="loader__3"></ellipse></svg></div>
+  <div
+    class="wrapper">
     <!--begin side-->
     <div class="side"><button class="side__back js-side-back">← Вернуться назад</button>
       <div class="side__inner js-side-inner">
@@ -62,7 +64,15 @@
         <!--begin nav-->
         <nav class="navigation js-navigation"><button class="navigation__close js-nav-close"></button><a href="#" class="navigation__link">Мы</a><a href="#" class="navigation__link">Продвижение сайтов</a><a href="#" class="navigation__link">Отраслевые решения</a><a href="#" class="navigation__link">Другие услуги</a>
           <a
-            href="#" class="navigation__link">Портфолио</a><a href="#" class="navigation__link">Контакты</a></nav>
+            href="#" class="navigation__link">Портфолио</a><a href="#" class="navigation__link">Контакты</a>
+            <div class="navigation__foot"><a href="#" class="navigation__btn btn">оставить заявку</a>
+              <!--begin contacts-->
+              <div class="navigation__contacts contacts"><a href="tel:+79091222545" class="contacts__link"><svg class="icon icon-phone"><use xlink:href="img/sprite.svg#icon-phone"></use></svg><span class="contacts__link-text">+7 909 122-25-45</span></a>
+                <a href="mailto:manager@madmonks.ru" class="contacts__link contacts__link_mail"><svg class="icon icon-mail"><use xlink:href="img/sprite.svg#icon-mail"></use></svg><span class="contacts__link-text">manager@madmonks.ru</span></a>
+              </div>
+              <!--end contacts-->
+            </div>
+        </nav>
         <!--end nav--><a href="tel:+79091222545" class="header__phone"><svg class="icon icon-phone"><use xlink:href="img/sprite.svg#icon-phone"></use></svg><span class="header__phone-text">+7 909 122-25-45</span></a></div>
     </header>
     <div class="main js-main">
@@ -275,14 +285,14 @@
       <!--end inform-->
     </div>
     <!--end one-->
-  </div>
-  <footer class="footer js-footer">
-    <div class="footer__container container"><button class="footer__mouse js-next-slide"></button>
-      <div class="footer__info"><a href="mailto:manager@madmonks.ru" class="footer__email">manager@madmonks.ru</a><a href="tel:+79091222545" class="footer__phone">+7 909 122-25-45</a></div>
     </div>
-  </footer>
-  </div>
-  <script src="js/app.js"></script>
+    <footer class="footer js-footer">
+      <div class="footer__container container"><button class="footer__mouse js-next-slide"></button>
+        <div class="footer__info"><a href="mailto:manager@madmonks.ru" class="footer__email">manager@madmonks.ru</a><a href="tel:+79091222545" class="footer__phone">+7 909 122-25-45</a></div>
+      </div>
+    </footer>
+    </div>
+    <script src="js/app.js"></script>
 </body>
 
 </html>

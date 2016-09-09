@@ -1,6 +1,10 @@
 /* Common JS */
 $(document).ready(function () {
 
+  $(window).load(function () {
+    $('.loader').fadeOut('slow');
+  });
+
   //for IE9
   svg4everybody();
 
@@ -166,6 +170,7 @@ $(document).ready(function () {
           }
           nav.removeClass('is-active');
           footer.removeClass('is-hidden');
+          hamburgerBtn.fadeOut();
         }
 
         if (index == 1 && nextIndex == 2) {

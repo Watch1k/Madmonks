@@ -176,6 +176,33 @@ svg:not(:root)
 			color: #3f2120
 			transition: all 0.5s
 		
+.btn
+	overflow: hidden
+	position: relative
+	display: inline-block
+	padding: 18px 40px 14px
+	+museo
+	font-size: 14px
+	color: $white
+	line-height: 1
+	text-transform: uppercase
+	border: 2px solid $orange
+	border-radius: 25px
+	&:after
+		content: ''
+		position: absolute
+		z-index: -1
+		left: 0
+		top: 0
+		bottom: 0
+		width: 0
+		border-radius: 20px
+		background-color: $orange
+		transition: all 0.3s
+	&:hover
+		&:after
+			width: 105%
+		
 .navigation
 	pointer-events: auto
 	position: relative
@@ -189,6 +216,26 @@ svg:not(:root)
 	+gutter
 	+r(1199)
 		display: none
+	&__foot
+		display: none
+		position: absolute
+		left: 0
+		right: 0
+		bottom: 26px
+		padding-left: 115px
+	&__btn
+		margin-bottom: 26px
+		+museo-b
+		font-size: 13px
+		background-color: #ffba00
+		border: 2px solid #ffba00
+		transition: all 0.2s
+		&:after
+			content: none
+			display: none
+		&:hover
+			background-color: $orange-dark
+			border-color: $orange-dark
 	&__close
 		display: none
 		position: absolute
@@ -239,6 +286,7 @@ svg:not(:root)
 		right: -420px
 		bottom: 0
 		width: 420px
+		padding-bottom: 100px
 		flex-direction: column
 		justify-content: center
 		align-items: center
@@ -247,6 +295,8 @@ svg:not(:root)
 			display: flex !important
 			right: 0
 			transition: right 0.3s
+	&.is-mod &__foot
+		display: block
 	&.is-mod &__close
 		display: block
 	&.is-mod &__link
@@ -287,6 +337,7 @@ svg:not(:root)
 
 .hamburger
 	pointer-events: auto
+	-webkit-tap-highlight-color: transparent
 	display: none
 	padding: 10px
 	position: absolute
@@ -312,8 +363,6 @@ svg:not(:root)
 		right: auto
 		margin-top: 1px
 		margin-left: 3px
-	&:hover
-		opacity: 0.7
 	&__box
 		width: 23px
 		height: 16px
@@ -533,33 +582,6 @@ video
 		font-size: 30px
 	&_black
 		color: $black
-		
-.btn
-	overflow: hidden
-	position: relative
-	display: inline-block
-	padding: 18px 40px 14px
-	+museo
-	font-size: 14px
-	color: $white
-	line-height: 1
-	text-transform: uppercase
-	border: 2px solid $orange
-	border-radius: 25px
-	&:after
-		content: ''
-		position: absolute
-		z-index: -1
-		left: 0
-		top: 0
-		bottom: 0
-		width: 0
-		border-radius: 20px
-		background-color: $orange
-		transition: all 0.3s
-	&:hover
-		&:after
-			width: 105%
 		
 		
 /* Entry Section
@@ -1393,6 +1415,54 @@ video
 	&__link
 		&_mail &-text
 			text-decoration: underline
+	
+
+/* ===================================
+	 Loader
+	 =================================== */
+.loader
+	position: fixed
+	z-index: 99
+	top: 0
+	left: 0
+	right: 0
+	bottom: 0
+	background-color: #e36f34
+	+vertical
+	text-align: center
+	&__svg
+		overflow: visible
+		height: 10vh
+		animation: animate-svg 0.5s alternate infinite ease
+	&__1
+		fill: #ffffff
+		animation: animate-logo 0.5s alternate infinite ease
+	&__2
+		fill: #ffffff
+		animation: animate-logo 0.5s alternate infinite ease
+	&__3
+		animation: animate2-svg 0.5s alternate infinite ease
+		transform-origin: center center
+
+@keyframes animate-logo
+	0%
+		opacity: 0.9
+	100%
+		opacity: .65
+
+@keyframes animate-svg
+	0%
+		transform: translateY(0) translateZ(0)
+	100%
+		transform: translateY(-10px) translateZ(0)
+
+@keyframes animate2-svg
+	0%
+		opacity: 0.3
+		transform: translateY(0) scale(1.1) translateZ(0)
+	100%
+		opacity: 0.1
+		transform: translateY(3px) scale(0.85) translateZ(0)
 	
 
 /* ===================================

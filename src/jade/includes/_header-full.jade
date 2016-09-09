@@ -24,6 +24,17 @@ header.header.js-header
 			a.navigation__link(href='#') Другие услуги
 			a.navigation__link(href='#') Портфолио
 			a.navigation__link(href='#') Контакты
+			.navigation__foot
+				a.navigation__btn.btn(href='#') оставить заявку
+				//begin contacts
+				.navigation__contacts.contacts
+					a.contacts__link(href='tel:+79091222545')
+						+i('phone')
+						span.contacts__link-text +7 909 122-25-45
+					a.contacts__link.contacts__link_mail(href='mailto:manager@madmonks.ru')
+						+i('mail')
+						span.contacts__link-text manager@madmonks.ru
+				//end contacts
 		//end nav
 
 		a.header__phone(href="tel:+79091222545")
