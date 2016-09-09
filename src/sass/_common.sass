@@ -1048,12 +1048,13 @@ video
 		vertical-align: top
 		transition: transform 0.3s
 		user-select: none
+		+r(1024)
+			padding: 10px
 		+r(1023)
 			float: left
 			+pre(0)
 			width: auto
-			padding-top: 0
-			padding-bottom: 100px
+			padding: 0 30px 100px
 			+gutter
 		&:hover,
 		&.is-active
@@ -1104,6 +1105,8 @@ video
 		display: none
 		background-color: #ffffff
 		transform: translateZ(0)
+		+r(1024)
+			padding: 0 10px 10px
 		+r(1023)
 			display: block
 			position: relative
@@ -1205,6 +1208,10 @@ video
 		height: 202px
 		transform: translateZ(0)
 		transition: all 0.3s
+		+r(1024)
+			height: 182px
+		+r(1023)
+			height: 202px
 		& + &
 			+r(767)
 				margin-top: 20px

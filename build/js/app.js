@@ -405,6 +405,8 @@ $(document).ready(function () {
       });
 
       $('.js-bg-list li').on('tap', function () {
+        $(this).unbind('mouseenter');
+        $(this).unbind('mouseleave');
         $('.js-bg-list li').removeClass('is-active').css('z-index', '1');
         $('.js-for-hidden').hide();
         if (!$(this).hasClass('is-active')) {
