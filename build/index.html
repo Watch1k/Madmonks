@@ -20,29 +20,54 @@
   <div
     class="wrapper">
     <!--begin side-->
-    <div class="side"><button class="side__back js-side-back">← Вернуться назад</button>
-      <div class="side__inner js-side-inner">
-        <!--begin menu-->
-        <nav class="menu js-menu"><a data-index="1" href="#" class="menu__link">Мы</a><a data-index="2" href="#" class="menu__link menu__link_parent js-menu-parent">Продвижение сайтов</a><a data-index="3" href="#" class="menu__link menu__link_parent js-menu-parent">Отраслевые решения</a>
-          <a
-            data-index="4" href="#" class="menu__link">Другие услуги</a><a data-index="5" href="#" class="menu__link">Портфолио</a><a data-index="6" href="#" class="menu__link">Клиенты и отзывы</a><a data-index="7" href="#" class="menu__link">Контакты</a><a data-index="8" href="#" class="menu__link">Блог</a></nav>
-        <!--end menu-->
-        <!--begin menus-->
-        <div data-child="2" class="menus js-menus"><a href="#" class="menus__link">Продвижение интернет-магазинов</a><a href="#" class="menus__link">Продвижение сайтов строительных компаний</a><a href="#" class="menus__link">Продвижение сайтов мебельных компаний</a><a href="#" class="menus__link">Продвижение сайтов промышленных и производственных компаний</a></div>
-        <!--end menus-->
-        <!--begin menus-->
-        <div data-child="3" class="menus js-menus"><a href="#" class="menus__link">Отраслевые решения 1</a><a href="#" class="menus__link">Отраслевые сайтов решения test 2</a><a href="#" class="menus__link">Отраслевые решения 3</a><a href="#" class="menus__link">Продвижение Отраслевые решения 4</a>
-          <a
-            href="#" class="menus__link">Сайтов промышленных Отраслевые решения 5</a><a href="#" class="menus__link">Отраслевые решения 6</a><a href="#" class="menus__link">Отраслевые решения 7</a><a href="#" class="menus__link">сайтов мебельных Отраслевые решения 8</a><a href="#"
-              class="menus__link">Отраслевые решения 10</a><a href="#" class="menus__link">Сайтов Отраслевые решения 11</a><a href="#" class="menus__link">Отраслевые решения 12</a></div>
-        <!--end menus-->
-      </div><a href="#" class="side__btn btn">оставить заявку</a>
-      <!--begin contacts-->
-      <div class="side__contacts contacts"><a href="tel:+79091222545" class="contacts__link"><svg class="icon icon-phone"><use xlink:href="img/sprite.svg#icon-phone"></use></svg><span class="contacts__link-text">+7 909 122-25-45</span></a>
-        <a href="mailto:manager@madmonks.ru" class="contacts__link contacts__link_mail"><svg class="icon icon-mail"><use xlink:href="img/sprite.svg#icon-mail"></use></svg><span class="contacts__link-text">manager@madmonks.ru</span></a>
-      </div>
-      <!--end contacts-->
-    </div>
+    <!--.sidebutton.side__back.js-side-back ← Вернуться назад
+
+.side__inner.js-side-inner
+	//begin menu
+	nav.menu.js-menu
+		a.menu__link(data-index='1' href='#') Мы
+		a.menu__link.menu__link_parent.js-menu-parent(data-index='2' href='#') Продвижение сайтов
+		a.menu__link.menu__link_parent.js-menu-parent(data-index='3' href='#') Отраслевые решения
+		a.menu__link(data-index='4' href='#') Другие услуги
+		a.menu__link(data-index='5' href='#') Портфолио
+		a.menu__link(data-index='6' href='#') Клиенты и отзывы
+		a.menu__link(data-index='7' href='#') Контакты
+		a.menu__link(data-index='8' href='#') Блог
+	//end menu
+
+	//begin menus
+	.menus.js-menus(data-child='2')
+		a.menus__link(href='#') Продвижение интернет-магазинов
+		a.menus__link(href='#') Продвижение сайтов строительных компаний
+		a.menus__link(href='#') Продвижение сайтов мебельных компаний
+		a.menus__link(href='#') Продвижение сайтов промышленных и производственных компаний
+	//end menus
+
+	//begin menus
+	.menus.js-menus(data-child='3')
+		a.menus__link(href='#') Отраслевые решения 1
+		a.menus__link(href='#') Отраслевые сайтов решения test 2
+		a.menus__link(href='#') Отраслевые решения 3
+		a.menus__link(href='#') Продвижение Отраслевые решения 4
+		a.menus__link(href='#') Сайтов промышленных Отраслевые решения 5
+		a.menus__link(href='#') Отраслевые решения 6
+		a.menus__link(href='#') Отраслевые решения 7
+		a.menus__link(href='#') сайтов мебельных Отраслевые решения 8
+		a.menus__link(href='#') Отраслевые решения 10
+		a.menus__link(href='#') Сайтов Отраслевые решения 11
+		a.menus__link(href='#') Отраслевые решения 12
+	//end menus
+
+a.side__btn.btn(href='#') оставить заявку
+//begin contacts
+.side__contacts.contacts
+	a.contacts__link(href='tel:+79091222545')
+		+i('phone')
+		span.contacts__link-text +7 909 122-25-45
+	a.contacts__link.contacts__link_mail(href='mailto:manager@madmonks.ru')
+		+i('mail')
+		span.contacts__link-text manager@madmonks.ru
+//end contacts-->
     <!--end side-->
     <header class="header js-header">
       <div class="header__container container">
