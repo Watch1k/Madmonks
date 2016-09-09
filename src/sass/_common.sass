@@ -44,9 +44,10 @@ body
 	
 .main
 	position: relative
-	z-index: 1
+	z-index: 10
 	min-height: 100%
-	transition: all 0.5s
+	//transform: translate3d(0,0,0)
+	//transition: all 0.5s
 	
 	
 /* Helpers
@@ -688,8 +689,7 @@ video
 	overflow: hidden
 	background: transparent center center no-repeat
 	background-size: cover
-	//transform: translateZ(0)
-	//transform-style: preserve-3d
+	transform: translateZ(0)
 	+r(1023)
 		padding-left: 3px
 		padding-right: 3px
@@ -702,7 +702,7 @@ video
 		padding-bottom: 120px
 		position: relative
 		z-index: 3
-		//transform: translateZ(0)
+		transform: translateZ(0)
 		+r(1023)
 			padding-top: 40px
 			padding-bottom: 40px
@@ -846,8 +846,7 @@ video
 		width: 100%
 		height: 100%
 		background-color: rgba(244, 244, 243, .8)
-		//transform: translateZ(0)
-		//transform-style: preserve-3d
+		transform: translateZ(0)
 	&__text
 		+gutter
 		+pre(1)
@@ -927,8 +926,7 @@ video
 /* Section #4
 	----------------------------------- */
 .service
-	//transform: translateZ(0)
-	//transform-style: preserve-3d
+	transform: translateZ(0)
 	background: #fff url('../img/service_bg.jpg') center center no-repeat
 	background-size: cover
 	&__overlay
@@ -941,8 +939,7 @@ video
 		width: 100%
 		height: 100%
 		background-color: rgba(52, 52, 52, .8)
-		//transform: translateZ(0)
-		//transform-style: preserve-3d
+		transform: translateZ(0)
 	&__col
 		+gutter
 		+pre(1)
@@ -980,7 +977,7 @@ video
 	position: relative
 	background: transparent url('../img/bg/bg_7.jpg') center center no-repeat
 	background-size: cover
-	//transform: translateZ(0)
+	transform: translateZ(0)
 	&:before
 		content: ''
 		position: absolute
@@ -1006,7 +1003,7 @@ video
 		background-color: #ffffff
 		z-index: 0
 		pointer-events: none
-		//transform: translateZ(0)
+		transform: translateZ(0)
 		+r(1023)
 			&:first-child
 				display: block
