@@ -838,7 +838,7 @@ video
 	//	padding-bottom: 200px
 	&__overlay
 		position: absolute
-		z-index: 2
+		z-index: 30
 		top: 0
 		left: 0
 		right: 0
@@ -847,6 +847,7 @@ video
 		height: 100%
 		background-color: rgba(244, 244, 243, .8)
 		transform: translateZ(0)
+		transform-style: preserve-3d
 	&__text
 		+gutter
 		+pre(1)
@@ -927,11 +928,12 @@ video
 	----------------------------------- */
 .service
 	transform: translateZ(0)
+	transform-style: preserve-3d
 	background: #fff url('../img/service_bg.jpg') center center no-repeat
 	background-size: cover
 	&__overlay
 		position: absolute
-		z-index: 2
+		z-index: 30
 		top: 0
 		left: 0
 		right: 0
@@ -940,6 +942,7 @@ video
 		height: 100%
 		background-color: rgba(52, 52, 52, .8)
 		transform: translateZ(0)
+		transform-style: preserve-3d
 	&__col
 		+gutter
 		+pre(1)
