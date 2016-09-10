@@ -49,16 +49,17 @@ block body
 					a.menus__link(href='#') Отраслевые решения 12
 				//end menus
 
-			a.side__btn.btn(href='#') оставить заявку
-			//begin contacts
-			.side__contacts.contacts
-				a.contacts__link(href='tel:+79091222545')
-					+i('phone')
-					span.contacts__link-text +7 909 122-25-45
-				a.contacts__link.contacts__link_mail(href='mailto:manager@madmonks.ru')
-					+i('mail')
-					span.contacts__link-text manager@madmonks.ru
-			//end contacts
+			.side__footer
+				a.side__btn.btn(href='#') оставить заявку
+				//begin contacts
+				.side__contacts.contacts
+					a.contacts__link(href='tel:+79091222545')
+						+i('phone')
+						span.contacts__link-text +7 909 122-25-45
+					a.contacts__link.contacts__link_mail(href='mailto:manager@madmonks.ru')
+						+i('mail')
+						span.contacts__link-text manager@madmonks.ru
+				//end contacts
 		//end side
 
 		include includes/_header-full

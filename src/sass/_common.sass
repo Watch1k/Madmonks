@@ -1048,7 +1048,7 @@ video
 		vertical-align: top
 		transition: transform 0.3s
 		user-select: none
-		+r(1024)
+		+r(1367)
 			padding: 10px
 		+r(1023)
 			float: left
@@ -1105,7 +1105,7 @@ video
 		display: none
 		background-color: #ffffff
 		transform: translateZ(0)
-		+r(1024)
+		+r(1367)
 			padding: 0 10px 10px
 		+r(1023)
 			display: block
@@ -1208,7 +1208,9 @@ video
 		height: 202px
 		transform: translateZ(0)
 		transition: all 0.3s
-		+r(1024)
+		+r(1367)
+			height: 162px
+		+r(1199)
 			height: 182px
 		+r(1023)
 			height: 202px
@@ -1334,15 +1336,13 @@ video
 	&__row
 		+pie-clearfix
 	&__inner
-		margin-bottom: 50px
-		align-self: stretch
+		padding-bottom: 50px
+		flex: 1 0 auto
 		transition: all 0.2s
 	&__btn
 		display: block
-		flex: auto 0 0
-		align-self: stretch
-		margin: auto 36px 26px 26px
-		padding: 16px 0 12px
+		margin: 0 36px 26px 26px
+		padding: 16px 32px 12px
 		text-align: center
 		+museo-b
 		font-size: 13px
@@ -1354,8 +1354,6 @@ video
 		&:hover
 			width: auto
 	&__contacts
-		flex: auto 0 0
-		align-self: stretch
 		margin-left: 26px
 	&__back
 		position: absolute
