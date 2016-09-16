@@ -339,9 +339,9 @@ svg:not(:root)
 .hamburger
 	pointer-events: auto
 	-webkit-tap-highlight-color: transparent
-	display: none
 	padding: 10px
 	position: absolute
+	display: none
 	z-index: 10
 	right: 0
 	cursor: pointer
@@ -403,6 +403,11 @@ svg:not(:root)
 			top: -7px
 		&::after
 			bottom: -7px
+	&.is-white &__inner
+		background-color: #ffffff
+	&.is-white &__inner:before,
+	&.is-white &__inner:after
+		background-color: #ffffff
 	&_spin &__inner
 		transition-duration: 0.3s
 		transition-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19)

@@ -176,6 +176,11 @@ $(document).ready(function () {
     style: 'font-size: 16px;'
   });
 
+  if ($(window).width() < 1200 && $(window).width() >= 1024) {
+    $('.js-hamburger').fadeIn();
+    $('.js-navigation').addClass('is-mod');
+  }
+
   if ($(window).width() < 1024) {
     var hamburger = $('.js-hamburger'),
       main = $('.js-main'),
@@ -306,7 +311,7 @@ $(document).ready(function () {
           svgMask.addClass('is-active');
           header.addClass('is-active');
           svgOverlay.addClass('is-active');
-          hamburgerBtn.fadeIn();
+          hamburgerBtn.removeClass('is-white').fadeIn();
           navigation.hide().addClass('is-mod');
           nav.addClass('is-active');
           footer.addClass('is-hidden');
@@ -320,7 +325,11 @@ $(document).ready(function () {
           }
           nav.removeClass('is-active');
           footer.removeClass('is-hidden');
-          hamburgerBtn.fadeOut();
+          if ($(window).width() >= 1200) {
+            hamburgerBtn.fadeOut();
+          } else {
+            hamburgerBtn.addClass('is-white');
+          }
         }
 
         if (index == 1 && nextIndex == 2) {
